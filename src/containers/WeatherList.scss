@@ -1,15 +1,44 @@
 .internal-page {
   border: 1px dashed orange;
+  perspective: 3000px;
+  height: 600px;
+  perspective-origin: 50% 50%;
 }
 
 .weather-item-container {
-  border: 1px solid black;
-  border-radius: 4px;
-  padding: 15px;
-  max-width: 400px;
   margin: 15px auto;
-  text-align: left;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  text-align: center;
+  width: 400px;
+  height: 550px;
+  border: 1px solid orange;
+  position: relative;
+  float: left;
+  margin: 15px;
+  transform-style: preserve-3d;
+  transition: transform 1.0s cubic-bezier(0,.75,.25,1);
+  opacity: 1;
+  animation: fadeIn 1s ease;
+  cursor: pointer;
+
+  .front {
+    position: absolute;
+    border-radius: 4px;
+    margin: auto;
+    width: 400px;
+    backface-visibility: hidden;
+    border: 1px solid black;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+
+  .verse {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    border: 1px solid black;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
 
   .title {
     font-size: 20px;
@@ -26,5 +55,27 @@
     padding: 5px;
     border-radius: 4px;
     margin: 5px;
+    width: 50px;
   }
+}
+
+.back-side {
+  transform: rotateY(180deg);
+
+  &:hover {
+    transform: rotateY(170deg);
+  }
+}
+
+.front-side {
+  transform: rotateY(0deg);
+
+  &:hover {
+    transform: rotateY(10deg);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; margin-left: 50%; }
+  to { opacity: 1; margin-left: 0; }
 }
