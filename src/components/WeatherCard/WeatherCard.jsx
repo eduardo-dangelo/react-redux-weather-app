@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Chart from '../components/Chart';
-import WeekDayInfo from '../components/WeekDayInfo';
-import MainInfo from '../components/MainInfo';
-import './WeatherList.scss';
+import React, { Component } from 'react'; 
+import Chart from '../Chart';
+import WeekDayInfo from '../WeekDayInfo/WeekDayInfo';
+import MainInfo from '../MainInfo/MainInfo';
+import './style.scss';
 
 class WeatherList extends Component {
   constructor(props) {
@@ -69,8 +68,8 @@ class WeatherList extends Component {
     
     console.log(flipCard);
     return (
-      <div className={flipCard ? 'weather-item-container back-side' : 'weather-item-container front-side'}>
-        <div className="front" onClick={this.flipSide}>        
+      <div className={flipCard ? 'weather-card-container back-side' : 'weather-card-container front-side'}>
+        <div className="card front" onClick={this.flipSide}>        
           <MainInfo
             name={name}
             country={country}
@@ -88,13 +87,13 @@ class WeatherList extends Component {
                   key={key}
                   day={dayNames[dayIndex + week.index]}
                   desc={cityData.list[week.dayNumber].weather[0].description}
-                  temp={cityData.list[week.dayNumber].main.temp_max}
+                  tempMax={cityData.list[week.dayNumber].main.temp_max}
                 />
               );
             })}
           </div>
         </div>
-        <div className="verse" onClick={this.flipBack}>
+        <div className="card verse" onClick={this.flipBack}>
           <div className="charts">
             {chartList.map((chart, key) => {
               return (
@@ -113,8 +112,4 @@ class WeatherList extends Component {
   }
 }
 
-function mapStateToProps({ weather }) {
-  return { weather };
-}
-
-export default connect(mapStateToProps)(WeatherList);
+export default WeatherList;

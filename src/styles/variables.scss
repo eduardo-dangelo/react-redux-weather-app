@@ -1,0 +1,45 @@
+//general
+$box-shadow:  0 2px 6px rgba(0,0,0,0.5);
+$padding-default: 15px;
+$margin-default: 15px;
+$margin-double: 30px;
+
+//card-props
+$card-width: 350px;
+$card-height: 450px;
+$card-border-radius: 4px;
+$card-border: 1px solid black;
+
+//main-info - title
+$main-info-title-font-size: 25px;
+$main-info-title-color: white;
+$main-info-title-margin: 10px;
+$main-info-title-font-weight: bolder;
+
+//main-info - date
+$main-info-date-font-size: 18px;
+$main-info-date-opacity: .6;
+$main-info-date-color: white;
+
+//main-info - temp
+$main-info-temp-font-size: 60px;
+$main-info-temp-color: white;
+$main-info-temp-font-weight: 100;
+$main-info-temp-margin-top: $margin-double;
+
+//main-info - description
+$main-info-description-font-style: italic;
+$main-info-description-font-size: 18px;
+$main-info-description-opacity: .6;
+$main-info-description-color: white;
+
+//main-info - extra
+$main-info-extra-width: 200px;
+$main-info-extra-font-size: 14px;
+$main-info-extra-color: white;
+
+//main-info - wind
+$main-info-wind-width: 95px;
+$main-info-wind-color: white;
+
+
