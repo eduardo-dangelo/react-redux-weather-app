@@ -1,0 +1,33 @@
+@import "../styles/variables";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $app-font-family;
+  background: $app-background; 
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background: #000000;
+  border-bottom: 1px solid white;
+  padding: 20px;
+  color: white;
+  box-shadow: $header-box-shadow;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -1,0 +1,45 @@
+@import "../../../../../styles/variables";
+
+.week {
+  border-top: $week-border-top;
+  padding:  $week-padding;
+
+  .week-day-info {
+    display: flex;
+    // color: $week-day-info-color;
+
+    .week-day {
+      text-align: left;
+      font-weight: $week-day-font-weight;
+      flex: $week-day-flex;
+      display: flex;
+      align-items: center;
+      text-shadow: $text-shadow;
+    }
+
+    .day-description {
+      font-style: $day-description-font-style;
+      text-align: left;
+      flex: $day-description-flex;
+      display: flex;
+      align-items: center;
+      text-shadow: $text-shadow;
+
+      img {
+        width: $day-description-img-width;
+        margin-right: $day-description-img-margin-right;
+      }
+
+      span {
+        opacity: $day-description-span-opacity;
+      }
+    }
+
+    .day-temp {
+      flex: $day-temp-flex;
+      display: flex;
+      align-items: center;
+      text-shadow: $text-shadow;
+    }
+  }
+}

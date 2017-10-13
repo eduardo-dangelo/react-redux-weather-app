@@ -1,0 +1,133 @@
+@import "../../../styles/variables";
+
+.weather-card-container {
+  margin: 15px;
+  width: $card-width;
+  height: $card-height;
+  position: relative;
+  float: left;
+  transform-style: preserve-3d;
+  transition: transform 2.0s cubic-bezier(0,.75,.25,1);
+  opacity: 1;
+  animation: fadeIn 1s ease;
+  cursor: pointer;
+
+  .card {
+    width: $card-width;
+    height: $card-height;
+    border: $card-border;
+    border-radius: $card-border-radius;
+    box-shadow: $box-shadow;
+    backface-visibility: hidden;
+    position: absolute;
+    margin: auto;
+    background: gray;
+  }
+
+  .front {
+    transform: rotateY(0deg);
+    text-align: center;
+    color: blue;
+  }
+
+  .verse {
+    transform: rotateY(180deg);
+  }
+}
+
+.front-side {
+  transform: rotateY(0deg);
+
+  &:hover {
+    transform: rotateY(10deg);
+  }
+}
+
+.back-side {
+  transform: rotateY(540deg);
+
+  &:hover {
+    transform: rotateY(550deg);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; margin-left: 50%; }
+  to { opacity: 1; margin-left: 0; }
+}
+
+/*----------------------------------------
+  WEATHER-CARD - FRONT - STYLE-BY-WEATHER
+-----------------------------------------*/
+
+//clear-sky - day
+.bg-01d {
+  background: url('./img/01d.png');
+  border: 1px solid white !important;
+  color: white !important;
+
+  .week {
+    border-top: 1px solid white !important;
+  }
+}
+
+//clear-sky - night
+.bg-01n {
+  background: url('./img/01n.png');
+}
+
+.bg-02d {
+  background: url('./img/02d.png');
+}
+.bg-02n {
+  background: url('./img/02n.png');
+}
+
+.bg-03d {
+  background: url('./img/03d.png');
+}
+.bg-03n {
+  background: url('./img/03n.png');
+}
+
+.bg-04d {
+  background: url('./img/04d.png');
+}
+.bg-04n {
+  background: url('./img/04n.png');
+}
+
+.bg-09d {
+  background: url('./img/09d.png');
+}
+.bg-09n {
+  background: url('./img/09n.png');
+}
+
+.bg-10d {
+  background: url('./img/10d.png');
+}
+.bg-10n {
+  background: url('./img/10n.png');
+}
+
+.bg-11d {
+  background: url('./img/11d.png');
+}
+.bg-11n {
+  background: url('./img/11n.png');
+}
+
+.bg-13d {
+  background: url('./img/13d.png');
+}
+.bg-13n {
+  background: url('./img/13n.png');
+}
+
+.bg-50d {
+  background: url('./img/50d.png');
+}
+.bg-50n {
+  background: url('./img/50n.png');
+}

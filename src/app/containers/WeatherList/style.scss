@@ -1,0 +1,37 @@
+@import "../../../styles/variables";
+
+.internal-page {
+  perspective: 3000px;
+  height: 600px;
+  perspective-origin: 50% 50%;
+
+  .intro-message {
+    
+    h1 {
+      color: #ebe9d0;
+      font-size: 50px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+      max-width: 900px;
+      padding: 15px;
+      margin: auto;
+      margin-top: 10vh;
+    }
+
+
+    @media all and (max-width: 700px) {
+
+      h1 {
+        font-size: 30px;
+      }
+
+      img {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; margin-left: 50%; }
+  to { opacity: 1; margin-left: 0; }
+}

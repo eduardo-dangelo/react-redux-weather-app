@@ -1,14 +1,33 @@
-//general
-$box-shadow:  0 2px 6px rgba(0,0,0,0.5);
+/*-------------
+  GENERAL
+--------------*/
+
+$box-shadow:  0 4px 12px rgba(0,0,0,0.8);
 $padding-default: 15px;
 $margin-default: 15px;
 $margin-double: 30px;
+$text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+
+//body
+$app-background: #ebe9d0;
+$app-font-family: sans-serif;
+
+//header
+$header-box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+
+/*-------------
+  WEATHER-CARD
+--------------*/
 
 //card-props
 $card-width: 350px;
 $card-height: 450px;
 $card-border-radius: 4px;
-$card-border: 1px solid black;
+$card-border: 1px solid blue;
+
+/*-----------------------
+  WEATHER-CARD MAIN-INFO
+-------------------------*/
 
 //main-info - title
 $main-info-title-font-size: 25px;
@@ -42,4 +61,28 @@ $main-info-extra-color: white;
 $main-info-wind-width: 95px;
 $main-info-wind-color: white;
 
+/*-------------------------
+  WEATHER-CARD - WEEK-INFO
+---------------------------*/
+
+//week-day-info - week 
+$week-border-top: 1px solid blue;
+$week-padding: 5px;
+
+//week-day-info
+$week-day-info-color: white;
+
+//week-day-info - week-day
+$week-day-font-weight: bolder;
+
+//week-day-info - day-description
+$day-description-font-style: italic;
+$day-description-img-width: 30px;
+$day-description-img-margin-right: 10px;
+$day-description-span-opacity: .8;
+
+//week-day-info - flex-box
+$week-day-flex: 2;
+$day-description-flex: 5;
+$day-temp-flex: 1;
 
