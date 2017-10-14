@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, InputGroup, Button, FormControl } from 'react-bootstrap';
+import { FormGroup, InputGroup, Button, FormControl, Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../../../actions/index';
@@ -41,34 +41,40 @@ class SearchBar extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <FormGroup>
-          <FormControl
-            componentClass="select"
-            placeholder="select"
-            className="select-input"
-            value={country}
-            onChange={this.onCountrySelect}
-          >
-            {countryList.map((item, key) => {
-              return <option key={key} value={item.value}>{item.label}</option>;
-            })}
-          </FormControl>
-          <InputGroup>
-            <FormControl
-              type="text"
-              value={city}
-              onChange={this.onInputChange}
-            />
-            <InputGroup.Button>
-              <Button
-                className="btn-search"
-                type="submit"
+          <div className="row form-container">
+            <div className="col-sm-2">
+              <FormControl
+                componentClass="select"
+                placeholder="select"
+                className="select-input"
+                value={country}
+                onChange={this.onCountrySelect}
               >
-                Search
-              </Button>
-            </InputGroup.Button>
-          </InputGroup>
-        </FormGroup>
+                {countryList.map((item, key) => {
+                  return <option key={key} value={item.value}>{item.label}</option>;
+                })}
+              </FormControl>
+            </div>
+            <div className="col-sm-10">
+
+                <InputGroup>
+                  <FormControl
+                    type="text"
+                    value={city}
+                    onChange={this.onInputChange}
+                  />
+                  <InputGroup.Button>
+                    <Button
+                      className="btn-search"
+                      type="submit"
+                    >
+                      Search
+                    </Button>
+                  </InputGroup.Button>
+                </InputGroup>
+
+            </div>
+          </div>
       </form>
     );
   }

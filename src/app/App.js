@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <SearchBar />
+          <div className="search-bar">
+            <SearchBar />
+          </div>
         </header>
         <WeatherList />
       </div>

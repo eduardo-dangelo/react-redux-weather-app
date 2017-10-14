@@ -2,6 +2,14 @@
   GENERAL
 --------------*/
 
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Quicksand');
+$app-font-family: 'Josefin Sans', sans-serif;
+
+//body
+$app-background: #ebe9d0;
+
+
 $box-shadow:  0 4px 12px rgba(0,0,0,0.8);
 $padding-default: 15px;
 $margin-default: 15px;
@@ -20,10 +28,6 @@ $header-box-shadow: 0 2px 4px rgba(0,0,0,0.6);
 /*-------------
   BODY
 --------------*/
-
-//body
-$app-background: #ebe9d0;
-$app-font-family: sans-serif;
 
 //intro-message
 $heading-font-size: 50px;

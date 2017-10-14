@@ -6,6 +6,7 @@
   perspective-origin: 50% 50%;
 
   .intro-message {
+    margin-top: $heading-margin-top;
     
     h1 {
       color: $app-background;
@@ -14,7 +15,6 @@
       max-width: $heading-max-width;
       padding: $heading-padding;
       margin: auto;
-      margin-top: $heading-margin-top;
     }
 
 
@@ -29,9 +29,4 @@
       }
     }
   }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; margin-left: 50%; }
-  to { opacity: 1; margin-left: 0; }
 }
