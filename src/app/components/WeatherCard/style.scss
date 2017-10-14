@@ -4,11 +4,14 @@
   margin: 15px;
   width: $card-width;
   height: $card-height;
+  box-shadow: $box-shadow;
+  border-radius: $card-border-radius;
   position: relative;
   float: left;
   transform-style: preserve-3d;
   transition: transform 2.0s cubic-bezier(0,.75,.25,1);
   opacity: 1;
+  
   animation: fadeIn 1s ease;
   cursor: pointer;
 
@@ -17,9 +20,10 @@
     height: $card-height;
     border: $card-border;
     border-radius: $card-border-radius;
-    box-shadow: $box-shadow;
+    box-shadow: $inset-box-shadow;
     backface-visibility: hidden;
     position: absolute;
+    overflow: hidden;
     margin: auto;
     background: #fc4a1a;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
@@ -63,74 +67,158 @@
   WEATHER-CARD - FRONT - STYLE-BY-WEATHER
 -----------------------------------------*/
 
-//clear-sky - day
+/*-----------
+  clear sky
+---------- -*/
+
+//day
 .bg-01d {
-  background: url('./img/01d.png');
-  border: 1px solid white !important;
-  color: white !important;
+  background: url('./img/01d.png') !important;
+}
+
+//night
+.bg-01n {
+  background: url('./img/01n.png') !important;
+}
+
+/*-------------
+  Few clouds
+-------------*/
+
+//day
+.bg-02d {
+  background: url('./img/02d.png') !important;
+}
+
+//night
+.bg-02n {
+  background: url('./img/02n.png') !important;
+}
+
+/*-------------------
+  scattered clouds
+-------------------*/
+
+//day
+.bg-03d {
+  background: url('./img/03d.png') !important;
+  color: black !important;
+  border: 2px solid black !important;
+
+  .main-info .main-info-wind img {
+    filter: invert(0%) !important;
+  }
 
   .week {
-    border-top: 1px solid white !important;
+    border-top: 1px solid black !important;
   }
 }
 
-//clear-sky - night
-.bg-01n {
-  background: url('./img/01n.png');
-}
-
-.bg-02d {
-  background: url('./img/02d.png');
-}
-.bg-02n {
-  background: url('./img/02n.png');
-}
-
-.bg-03d {
-  background: url('./img/03d.png');
-}
+//night
 .bg-03n {
-  background: url('./img/03n.png');
+  background: url('./img/03n.png') !important;
 }
 
+/*-----------
+  broken clouds
+-----------*/
+
+//day
 .bg-04d {
-  background: url('./img/04d.png');
+  background: url('./img/04d.png') !important;
+  color: black !important;
+  border: 2px solid black !important;
+
+  .main-info .main-info-wind img {
+    filter: invert(0%) !important;
+  }
+
+  .week {
+    border-top: 1px solid black !important;
+  }
 }
+
+//night
 .bg-04n {
-  background: url('./img/04n.png');
+  background: url('./img/04n.png') !important;
 }
 
+/*-----------
+  shower rain
+-----------*/
+
+//day
 .bg-09d {
-  background: url('./img/09d.png');
+  background: url('./img/09d.png') !important;
 }
+
+//night
 .bg-09n {
-  background: url('./img/09n.png');
+  background: url('./img/09n.png') !important;
 }
 
+/*-----------
+  rain
+-----------*/
+
+//day
 .bg-10d {
-  background: url('./img/10d.png');
+  background: url('./img/10d.png') !important;
+  color: black !important;
+  border: 2px solid black !important;
+
+  .main-info .main-info-wind img {
+    filter: invert(0%) !important;
+  }
+
+  .week {
+    border-top: 1px solid black !important;
+  }
 }
+
+//night
 .bg-10n {
-  background: url('./img/10n.png');
+  background: url('./img/10n.png') !important;
 }
 
+/*-----------
+  thunderstorm
+-----------*/
+
+//day
 .bg-11d {
-  background: url('./img/11d.png');
+  background: url('./img/11d.png') !important;
 }
+
+//night
 .bg-11n {
-  background: url('./img/11n.png');
+  background: url('./img/11n.png') !important;
 }
 
+/*-----------
+  snow
+-----------*/
+
+//day
 .bg-13d {
-  background: url('./img/13d.png');
-}
-.bg-13n {
-  background: url('./img/13n.png');
+  background: url('./img/13d.png') !important;
 }
 
-.bg-50d {
-  background: url('./img/50d.png');
+//night
+.bg-13n {
+  background: url('./img/13n.png') !important;
 }
+
+/*-----------
+  mist
+-----------*/
+
+//day
+.bg-50d {
+  background: url('./img/50d.png') !important;
+}
+
+//night
 .bg-50n {
-  background: url('./img/50n.png');
+  background: url('./img/50n.png') !important;
 }
