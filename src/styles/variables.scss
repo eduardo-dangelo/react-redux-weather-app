@@ -9,14 +9,18 @@ $app-font-family: 'Josefin Sans', sans-serif;
 //body
 $app-background: #ebe9d0;
 
-
+//default-values
 $box-shadow:  0 4px 12px rgba(0,0,0,0.8);
 $padding-default: 15px;
 $margin-default: 15px;
 $margin-double: 30px;
 $text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+$radius-small: 4px;
+$transition-default: .3s ease;
 
+//screen-sizes
 $screen-small: 700px;
+$screen-smaller: 576px;
 
 /*-------------
   HEADER
@@ -24,6 +28,22 @@ $screen-small: 700px;
 
 //header
 $header-box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+
+//form
+$form-max-width: 900px;
+
+//input
+$input-border: 1px solid white;
+$input-inset-shadow: inset 0 1px 4px rgba(0,0,0,0.5);
+$input-font-size: 16px;
+$input-padding: 6px;
+$input-radius: $radius-small;
+$input-height: 34px;
+$input-margin-bottom: 1rem;
+
+//search-button
+$btn-search-background: linear-gradient(#38d15e, #1d6429);
+$btn-search-padding: 6px 15px;
 
 /*-------------
   BODY
