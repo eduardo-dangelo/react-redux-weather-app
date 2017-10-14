@@ -19,8 +19,10 @@ $radius-small: 4px;
 $transition-default: .3s ease;
 
 //screen-sizes
-$screen-small: 700px;
+$screen-large: 1140px;
+$screen-small: 780px;
 $screen-smaller: 576px;
+$screen-x-small: 380px;
 
 /*-------------
   HEADER
@@ -59,6 +61,16 @@ $heading-margin-top: 10vh;
 //responsiveness
 $heading-screen-small-font-size: 30px;
 $heading-img-screen-small-width: 100px;
+
+/*---------------
+  INTERNAL PAGE
+----------------*/
+$intenal-page-max-width-large: 1145px;
+$intenal-page-max-width-medium: 770px;
+$intenal-page-max-width-small: 390px;
+
+$internal-page-perspective: 3000px;
+$internal-page-perspective-origin: 50% 50%;
 
 
 /*-------------

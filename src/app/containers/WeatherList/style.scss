@@ -1,9 +1,22 @@
 @import "../../../styles/variables";
 
 .internal-page {
-  perspective: 3000px;
-  height: 100%;
-  perspective-origin: 50% 50%;
+  perspective: $internal-page-perspective;
+  max-width: $intenal-page-max-width-large;
+  margin: auto;
+  perspective-origin: $internal-page-perspective-origin;
+
+  @media all and (max-width: $screen-large) {
+    max-width: $intenal-page-max-width-medium;
+  }
+
+  @media all and (max-width: $screen-small) {
+    max-width: $intenal-page-max-width-small;
+  }
+
+  @media all and (max-width: $screen-x-small) {
+    max-width: 100%;
+  }
 
   .intro-message {
     margin-top: $heading-margin-top;
