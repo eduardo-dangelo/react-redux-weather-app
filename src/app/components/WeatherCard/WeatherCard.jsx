@@ -1,6 +1,5 @@
 import React, { Component } from 'react'; 
 import Chart from './components/Chart/Chart';
-import { debouce } from 'lodash';
 import WeekDayInfo from './components/WeekDayInfo/WeekDayInfo';
 import MainInfo from './components/MainInfo/MainInfo';
 import './style.scss';

@@ -81,7 +81,7 @@ $internal-page-perspective-origin: 50% 50%;
 $card-width: 350px;
 $card-height: 450px;
 $card-border-radius: 4px;
-$card-border: 1px solid blue;
+$card-border: 1px solid white;
 
 /*-----------------------
   WEATHER-CARD MAIN-INFO
@@ -90,7 +90,7 @@ $card-border: 1px solid blue;
 //main-info - title
 $main-info-title-font-size: 25px;
 $main-info-title-color: white;
-$main-info-title-margin: 10px;
+$main-info-title-margin: 0;
 $main-info-title-font-weight: bolder;
 
 //main-info - date
@@ -102,7 +102,7 @@ $main-info-date-color: white;
 $main-info-temp-font-size: 60px;
 $main-info-temp-color: white;
 $main-info-temp-font-weight: 100;
-$main-info-temp-margin-top: $margin-double;
+$main-info-temp-margin-top: 10px;
 
 //main-info - description
 $main-info-description-font-style: italic;
@@ -124,7 +124,7 @@ $main-info-wind-color: white;
 ---------------------------*/
 
 //week-day-info - week 
-$week-border-top: 1px solid blue;
+$week-border-top: 1px solid white;
 $week-padding: 5px;
 
 //week-day-info
