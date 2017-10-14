@@ -2,30 +2,30 @@
 
 .internal-page {
   perspective: 3000px;
-  height: 600px;
+  height: 100%;
   perspective-origin: 50% 50%;
 
   .intro-message {
     
     h1 {
-      color: #ebe9d0;
-      font-size: 50px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
-      max-width: 900px;
-      padding: 15px;
+      color: $app-background;
+      font-size: $heading-font-size;
+      text-shadow: $heading-text-shadow;
+      max-width: $heading-max-width;
+      padding: $heading-padding;
       margin: auto;
-      margin-top: 10vh;
+      margin-top: $heading-margin-top;
     }
 
 
-    @media all and (max-width: 700px) {
+    @media all and (max-width: $screen-small) {
 
       h1 {
-        font-size: 30px;
+        font-size: $heading-screen-small-font-size;
       }
 
       img {
-        width: 100px;
+        width: $heading-img-screen-small-width;
       }
     }
   }

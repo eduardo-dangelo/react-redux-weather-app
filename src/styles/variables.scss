@@ -8,12 +8,34 @@ $margin-default: 15px;
 $margin-double: 30px;
 $text-shadow: 0 2px 6px rgba(0,0,0,0.9);
 
+$screen-small: 700px;
+
+/*-------------
+  HEADER
+--------------*/
+
+//header
+$header-box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+
+/*-------------
+  BODY
+--------------*/
+
 //body
 $app-background: #ebe9d0;
 $app-font-family: sans-serif;
 
-//header
-$header-box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+//intro-message
+$heading-font-size: 50px;
+$heading-text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+$heading-max-width: 900px;
+$heading-padding: 15px;
+$heading-margin-top: 10vh;
+
+//responsiveness
+$heading-screen-small-font-size: 30px;
+$heading-img-screen-small-width: 100px;
+
 
 /*-------------
   WEATHER-CARD
