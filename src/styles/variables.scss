@@ -7,11 +7,11 @@
 $app-font-family: 'Josefin Sans', sans-serif;
 
 //body
-$app-background: #ebe9d0;
+$app-background: #e6e4d2;
 
 //default-values
 $box-shadow:  0 4px 12px rgba(0,0,0,0.8);
-$inset-box-shadow: inset 0 0 12px rgba(0,0,0,0.8);
+$inset-box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
 $padding-default: 15px;
 $margin-default: 15px;
 $margin-double: 30px;
@@ -82,7 +82,7 @@ $internal-page-perspective-origin: 50% 50%;
 $card-width: 350px;
 $card-height: 450px;
 $card-border-radius: 6px;
-$card-border: 2px solid white;
+$card-border: 1px solid white;
 
 /*-----------------------
   WEATHER-CARD MAIN-INFO

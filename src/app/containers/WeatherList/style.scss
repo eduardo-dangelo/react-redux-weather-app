@@ -1,10 +1,10 @@
 @import "../../../styles/variables";
 
 .internal-page {
-  perspective: $internal-page-perspective;
+  // perspective: $internal-page-perspective;
   max-width: $intenal-page-max-width-large;
   margin: auto;
-  perspective-origin: $internal-page-perspective-origin;
+  // perspective-origin: $internal-page-perspective-origin;
 
   @media all and (max-width: $screen-large) {
     max-width: $intenal-page-max-width-medium;

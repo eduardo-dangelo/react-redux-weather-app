@@ -46,7 +46,7 @@
   transform: rotateY(0deg);
 
   &:hover {
-    transform: rotateY(10deg);
+    // transform: rotateY(10deg);
   }
 }
 
@@ -103,7 +103,7 @@
 .bg-03d {
   background: url('./img/03d.png') !important;
   color: black !important;
-  border: 2px solid black !important;
+  border: 1px solid black !important;
 
   .main-info .main-info-wind img {
     filter: invert(0%) !important;
@@ -127,7 +127,7 @@
 .bg-04d {
   background: url('./img/04d.png') !important;
   color: black !important;
-  border: 2px solid black !important;
+  border: 1px solid black !important;
 
   .main-info .main-info-wind img {
     filter: invert(0%) !important;
@@ -165,14 +165,26 @@
 .bg-10d {
   background: url('./img/10d.png') !important;
   color: black !important;
-  border: 2px solid black !important;
+  border: 1px solid black !important;
 
   .main-info .main-info-wind img {
     filter: invert(0%) !important;
   }
 
+  .main-info {
+    .main-info-title, .main-info-date, .main-info-temp, .main-info-description {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+  }
+
   .week {
     border-top: 1px solid black !important;
+
+    .week-day-info {
+      .week-day, .day-description, .day-temp {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      }
+    }
   }
 }
 

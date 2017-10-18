@@ -68,7 +68,7 @@ class WeatherList extends Component {
     
     console.log(flipCard);
     return (
-      <div className={flipCard ? 'weather-card-container back-side' : 'weather-card-container front-side'}>
+      <div className={flipCard ? 'weather-card-container front-side' : 'weather-card-container front-side'}>
         <div className={`card front bg-${cityData.list[0].weather[0].icon}`} onClick={this.flipSide}>        
           <MainInfo
             name={name}
