@@ -35,9 +35,10 @@
     }
 
     .day-temp {
-      flex: $day-temp-flex;
+      // flex: $day-temp-flex;
       display: flex;
-      align-items: center;
+      align-items: center flex-end;
+      text-align: right;
       text-shadow: $text-shadow;
     }
   }

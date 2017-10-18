@@ -15,7 +15,7 @@ export default class WeekDayInfo extends Component {
           <span>{desc}</span>
         </div>
         <div className="day-temp">
-          {Math.round(tempMax)}  &#8451;
+          {Math.round(tempMax)}&#176;
         </div>
       </div>
     );

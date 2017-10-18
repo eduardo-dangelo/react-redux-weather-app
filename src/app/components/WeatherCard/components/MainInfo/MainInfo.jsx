@@ -15,18 +15,17 @@ export default class MainInfo extends Component {
           {day}{', '}{hour}
         </div>
         <div className="main-info-temp">
-          {Math.round(temp)}
-          <span>&#8451;</span>
+          {Math.round(temp)}&#176;
         </div>
         <div className="main-info-description">
           {desc}
         </div>
         <div className="main-info-extra">
           <div className="main-info-temp-max">
-            max - {Math.round(max)}  &#8451;
+            max - {Math.round(max)}&#176;
           </div>
           <div className="main-info-temp-min">
-            min - {Math.round(min)}  &#8451;
+            min - {Math.round(min)}&#176;
           </div>
         </div>
         <div className="main-info-wind">
