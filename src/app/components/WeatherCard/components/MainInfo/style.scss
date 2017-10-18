@@ -1,5 +1,9 @@
 @import "../../../../../styles/variables";
 
+/*-----------------------
+  WEATHER-CARD MAIN-INFO
+-------------------------*/
+
 .main-info {
   padding: $padding-default;
 
@@ -21,11 +25,6 @@
     font-weight: $main-info-temp-font-weight;
     margin-top: $main-info-temp-margin-top;
     text-shadow: $text-shadow;
-
-    span {
-      font-size: 30px;
-      text-shadow: $text-shadow;
-    }
   }
 
   .main-info-description {
@@ -59,9 +58,9 @@
     width: $main-info-wind-width;
 
     img {
-      width: 30px;
-      margin-right: 5px;
-      filter: invert(100%);
+      width: $main-info-wind-img-width;
+      margin-right: $main-info-wind-img-margin-right;
+      filter: $main-info-wind-img-filter;
     }
   }
 }

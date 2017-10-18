@@ -8,6 +8,7 @@ $app-font-family: 'Josefin Sans', sans-serif;
 
 //body
 $app-background: #e6e4d2;
+$app-text-align: center;
 
 //default-values
 $box-shadow:  0 4px 12px rgba(0,0,0,0.8);
@@ -30,7 +31,15 @@ $screen-x-small: 380px;
 --------------*/
 
 //header
+$header-bg: #000000;
+$header-border-bottom: 1px solid white;
+$header-padding: 20px;
+$header-color: white;
 $header-box-shadow: 0 2px 4px rgba(0,0,0,0.6);
+
+/*-------------
+  SEARCH-BAR
+--------------*/
 
 //form
 $form-max-width: 900px;
@@ -48,9 +57,9 @@ $input-margin-bottom: 1rem;
 $btn-search-background: linear-gradient(#38d15e, #1d6429);
 $btn-search-padding: 6px 15px;
 
-/*-------------
-  BODY
---------------*/
+/*------------------------------
+  WELCOME-TEXT / INTRO-MESSAGE
+-------------------------------*/
 
 //intro-message
 $heading-font-size: 50px;
@@ -63,9 +72,10 @@ $heading-margin-top: 10vh;
 $heading-screen-small-font-size: 30px;
 $heading-img-screen-small-width: 100px;
 
-/*---------------
-  INTERNAL PAGE
-----------------*/
+/*---------------------------------------
+  INTERNAL PAGE / WEATHER-LIST-CONTAINER
+-----------------------------------------*/
+
 $intenal-page-max-width-large: 1145px;
 $intenal-page-max-width-medium: 770px;
 $intenal-page-max-width-small: 390px;
@@ -78,47 +88,85 @@ $internal-page-perspective-origin: 50% 50%;
   WEATHER-CARD
 --------------*/
 
-//card-props
+//card-default-props
 $card-width: 350px;
 $card-height: 450px;
 $card-border-radius: 6px;
 $card-border: 1px solid white;
+$card-color: white;
+
+//card-background-gradient
+$card-bg-gradient-direction: bottom;
+$card-bg-color-1: #f7b733;
+$card-bg-color-2: #fc4a1a;
+
+//card-background
+$card-bg-fallback: $card-bg-color-2;
+$card-bg-gradient-webkit: -webkit-linear-gradient(to $card-bg-gradient-direction, $card-bg-color-1, $card-bg-color-2);
+$card-bg-gradient: linear-gradient(to $card-bg-gradient-direction, $card-bg-color-1, $card-bg-color-2);
+
+//media-query-max-width-380px
+$card-width-380px: 100%;
+$card-margin-380px: 0;
+$card-border-radius-380px: 0;
+
+//fade-in-animation
+$fade-in-opacity-from: 0;
+$fade-in-opacity-to: 1;
+
+/*-------------------
+  WEATHER-CARD-SIDES
+---------------------*/
+
+//front
+$card-front-tex-align: center;
+$card-front-rotate: rotateY(0deg);
+$card-front-rotate-on-hover: rotateY(10deg);
+
+//verse
+$card-verse-rotate: rotateY(180deg);
+$card-verse-rotate-on-hover: rotateY(190deg);
 
 /*-----------------------
   WEATHER-CARD MAIN-INFO
 -------------------------*/
 
-//main-info - title
+//main-info - TITLE
 $main-info-title-font-size: 25px;
 $main-info-title-color: white;
 $main-info-title-margin: 0;
 $main-info-title-font-weight: bolder;
 
-//main-info - date
+//main-info - DATE
 $main-info-date-font-size: 18px;
 $main-info-date-opacity: .6;
 $main-info-date-color: white;
 
-//main-info - temp
+//main-info - TEMP
 $main-info-temp-font-size: 60px;
 $main-info-temp-color: white;
 $main-info-temp-font-weight: 100;
 $main-info-temp-margin-top: 10px;
 
-//main-info - description
+//main-info - DESC
 $main-info-description-font-style: italic;
 $main-info-description-font-size: 18px;
 $main-info-description-opacity: .6;
 $main-info-description-color: white;
 
-//main-info - extra
+//main-info - EXTRA
 $main-info-extra-width: 200px;
 $main-info-extra-font-size: 14px;
 $main-info-extra-color: white;
 
-//main-info - wind
+//main-info - WIND
 $main-info-wind-width: 95px;
 $main-info-wind-color: white;
+
+//main-info - WIND - IMG
+$main-info-wind-img-width: 30px;
+$main-info-wind-img-margin-right: 5px;
+$main-info-wind-img-filter: invert(100%);
 
 /*-------------------------
   WEATHER-CARD - WEEK-INFO

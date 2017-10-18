@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormGroup, InputGroup, Button, FormControl, Row, Col } from 'react-bootstrap';
+import { InputGroup, Button, FormControl } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../../../actions/index';

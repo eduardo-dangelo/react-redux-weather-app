@@ -1,5 +1,9 @@
 @import "../../../styles/variables";
 
+/*-------------
+  WEATHER-CARD
+--------------*/
+
 .weather-card-container {
   margin: 15px;
   width: $card-width;
@@ -14,11 +18,10 @@
   animation: fadeIn 1s ease;
   cursor: pointer;
 
-  @media all and (max-width: 380px) {
-    width: 100%;
-    margin: 0;
+  @media all and (max-width: $screen-x-small) {
+    width: $card-width-380px;
+    margin: $card-margin-380px;
     min-height: $card-height;
-    height: auto;
   }
   
 
@@ -32,49 +35,53 @@
     position: absolute;
     overflow: hidden;
     margin: auto;
-    background: #fc4a1a;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: $card-color;
+    background: $card-bg-fallback;
+    background: $card-bg-gradient-webkit;
+    background: $card-bg-gradient;
 
-    @media all and (max-width: 380px) {
-      width: 100%;
-      margin: 0;
+    @media all and (max-width: $screen-x-small) {
+      width: $card-width-380px;
+      margin: $card-margin-380px;
       min-height: $card-height;
-      border-radius: 0;
+      border-radius: $card-border-radius-380px;
     }
     
   }
 
+/*-------------------
+  WEATHER-CARD-SIDES
+---------------------*/
+
   .front {
-    transform: rotateY(0deg);
-    text-align: center;
-    color: white;
+    transform: $card-front-rotate;
+    text-align: $card-front-tex-align;
   }
 
   .verse {
-    transform: rotateY(180deg);
+    transform: $card-verse-rotate;
   }
 }
 
 .front-side {
-  transform: rotateY(0deg);
+  transform: $card-front-rotate;
 
   &:hover {
-    // transform: rotateY(10deg);
+    // transform: $card-front-rotate-on-hover;
   }
 }
 
 .back-side {
-  transform: rotateY(540deg);
+  transform: $card-verse-rotate;
 
   &:hover {
-    transform: rotateY(550deg);
+    transform: $card-verse-rotate-on-hover;
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from { opacity: $fade-in-opacity-from; }
+  to { opacity: $fade-in-opacity-to; }
 }
 
 /*----------------------------------------

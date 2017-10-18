@@ -1,5 +1,9 @@
 @import "../../../styles/variables";
 
+/*---------------------------------------
+  INTERNAL PAGE / WEATHER-LIST-CONTAINER
+-----------------------------------------*/
+
 .internal-page {
   // perspective: $internal-page-perspective;
   max-width: $intenal-page-max-width-large;
@@ -17,6 +21,10 @@
   @media all and (max-width: $screen-x-small) {
     max-width: 100%;
   }
+
+/*------------------------------
+  WELCOME-TEXT / INTRO-MESSAGE
+-------------------------------*/
 
   .intro-message {
     margin-top: $heading-margin-top;

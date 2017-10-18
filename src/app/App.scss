@@ -1,5 +1,9 @@
 @import "../styles/variables";
 
+/*-------------
+  GENERAL
+--------------*/
+
 body {
   margin: 0;
   padding: 0;
@@ -8,18 +12,17 @@ body {
 }
 
 .App {
-  text-align: center;
+  text-align: $app-text-align;
 }
+
+/*-------------
+  HEADER
+--------------*/
 
 .App-header {
-  background: #000000;
-  border-bottom: 1px solid white;
-  padding: 20px;
-  color: white;
+  background: $header-bg;
+  border-bottom: $header-border-bottom;
+  padding: $header-padding;
+  color: $header-color;
   box-shadow: $header-box-shadow;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

@@ -20,7 +20,7 @@ class WeatherList extends Component {
           <div className="intro-message">
             <h1>The Weather App</h1>
             <h1>Select a country and search for a city to receive weather information</h1>
-            <img src={require('./img/weather-icon.png')} />
+            <img src={require('./img/weather-icon.png')} alt="icon"/>
           </div>
         ) : (
           <div>
