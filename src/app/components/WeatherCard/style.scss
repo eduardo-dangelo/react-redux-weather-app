@@ -11,9 +11,16 @@
   transform-style: preserve-3d;
   transition: transform 2.0s cubic-bezier(0,.75,.25,1);
   opacity: 1;
-  
   animation: fadeIn 1s ease;
   cursor: pointer;
+
+  @media all and (max-width: 380px) {
+    width: 100%;
+    margin: 0;
+    min-height: $card-height;
+    height: auto;
+  }
+  
 
   .card {
     width: $card-width;
@@ -28,6 +35,13 @@
     background: #fc4a1a;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    @media all and (max-width: 380px) {
+      width: 100%;
+      margin: 0;
+      min-height: $card-height;
+      border-radius: 0;
+    }
     
   }
 
