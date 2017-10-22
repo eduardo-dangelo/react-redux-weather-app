@@ -5,10 +5,10 @@
 -----------------------------------------*/
 
 .internal-page {
-  // perspective: $internal-page-perspective;
+  perspective: $internal-page-perspective;
   max-width: $intenal-page-max-width-large;
   margin: auto;
-  // perspective-origin: $internal-page-perspective-origin;
+  perspective-origin: $internal-page-perspective-origin;
 
   @media all and (max-width: $screen-large) {
     max-width: $intenal-page-max-width-medium;
@@ -49,5 +49,28 @@
         width: $heading-img-screen-small-width;
       }
     }
+  }
+
+  .weather-list {
+    position: relative;
+  }
+
+  .bottom-bar {
+    position: relative;
+    width: 100%;
+    padding: 45px;
+
+    img {
+      width: 30px;
+      opacity: .3;
+      cursor: pointer;
+      transition: .3s ease;
+
+      &:hover {
+        opacity: 1;
+        transition: .3s ease;
+      }
+    }
+
   }
 }

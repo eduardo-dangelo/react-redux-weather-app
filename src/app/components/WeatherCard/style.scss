@@ -11,7 +11,7 @@
   box-shadow: $box-shadow;
   border-radius: $card-border-radius;
   position: relative;
-  float: left;
+  // float: left;
   transform-style: preserve-3d;
   transition: transform 2.0s cubic-bezier(0,.75,.25,1);
   opacity: 1;
@@ -36,9 +36,7 @@
     overflow: hidden;
     margin: auto;
     color: $card-color;
-    background: $card-bg-fallback;
-    background: $card-bg-gradient-webkit;
-    background: $card-bg-gradient;
+    background: white;
 
     @media all and (max-width: $screen-x-small) {
       width: $card-width-380px;
@@ -65,6 +63,9 @@
 
 .front-side {
   transform: $card-front-rotate;
+  background: $card-bg-fallback;
+  background: $card-bg-gradient-webkit;
+  background: $card-bg-gradient;
 
   &:hover {
     // transform: $card-front-rotate-on-hover;
@@ -123,15 +124,27 @@
 //day
 .bg-03d {
   background: url('./img/03d.png') !important;
-  color: black !important;
-  border: 1px solid black !important;
+  color: $card-inverse-color !important;
+  border: $card-inverse-border !important;
 
   .main-info .main-info-wind img {
-    filter: invert(0%) !important;
+    filter: $card-inverse-wind-img-filter !important;
+  }
+
+  .main-info {
+    .main-info-title, .main-info-date, .main-info-temp, .main-info-description {
+      text-shadow: $card-inverse-text-shadow;
+    }
   }
 
   .week {
-    border-top: 1px solid black !important;
+    border-top: $card-inverse-border !important;
+
+    .week-day-info {
+      .week-day, .day-description, .day-temp {
+        text-shadow: $card-inverse-text-shadow;
+      }
+    }
   }
 }
 
@@ -147,15 +160,27 @@
 //day
 .bg-04d {
   background: url('./img/04d.png') !important;
-  color: black !important;
-  border: 1px solid black !important;
+  color: $card-inverse-color !important;
+  border: $card-inverse-border !important;
 
   .main-info .main-info-wind img {
-    filter: invert(0%) !important;
+    filter: $card-inverse-wind-img-filter !important;
+  }
+
+  .main-info {
+    .main-info-title, .main-info-date, .main-info-temp, .main-info-description {
+      text-shadow: $card-inverse-text-shadow;
+    }
   }
 
   .week {
-    border-top: 1px solid black !important;
+    border-top: $card-inverse-border !important;
+
+    .week-day-info {
+      .week-day, .day-description, .day-temp {
+        text-shadow: $card-inverse-text-shadow;
+      }
+    }
   }
 }
 
@@ -185,25 +210,25 @@
 //day
 .bg-10d {
   background: url('./img/10d.png') !important;
-  color: black !important;
-  border: 1px solid black !important;
+  color: $card-inverse-color !important;
+  border: $card-inverse-border !important;
 
   .main-info .main-info-wind img {
-    filter: invert(0%) !important;
+    filter: $card-inverse-wind-img-filter !important;
   }
 
   .main-info {
     .main-info-title, .main-info-date, .main-info-temp, .main-info-description {
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      text-shadow: $card-inverse-text-shadow;
     }
   }
 
   .week {
-    border-top: 1px solid black !important;
+    border-top: $card-inverse-border !important;
 
     .week-day-info {
       .week-day, .day-description, .day-temp {
-        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        text-shadow: $card-inverse-text-shadow;
       }
     }
   }
@@ -254,4 +279,13 @@
 //night
 .bg-50n {
   background: url('./img/50n.png') !important;
+}
+
+.charts {
+  border-top: 1px solid #eeeeee !important;
+  border-bottom: 1px solid #cccccc;
+  height: 145px;
+  position: relative;
+  margin: 5px 5px 0px 5px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }

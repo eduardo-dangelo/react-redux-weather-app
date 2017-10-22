@@ -7,7 +7,7 @@
 $app-font-family: 'Josefin Sans', sans-serif;
 
 //body
-$app-background: #e6e4d2;
+$app-background: #eeecdc;
 $app-text-align: center;
 
 //default-values
@@ -192,4 +192,14 @@ $day-description-span-opacity: .8;
 $week-day-flex: 2;
 $day-description-flex: 5;
 $day-temp-flex: 1;
+
+
+/*----------------------------------------
+  WEATHER-CARD - FRONT - INVERSE - STYLE
+-----------------------------------------*/
+
+$card-inverse-color: black;
+$card-inverse-border: 1px solid black;
+$card-inverse-wind-img-filter: invert(0%);
+$card-inverse-text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 
