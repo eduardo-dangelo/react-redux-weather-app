@@ -24,7 +24,7 @@ $transition-default: .3s ease;
 $screen-large: 1140px;
 $screen-small: 780px;
 $screen-smaller: 576px;
-$screen-x-small: 380px;
+$screen-x-small: 350px;
 
 /*-------------
   HEADER
@@ -114,19 +114,6 @@ $card-border-radius-380px: 0;
 $fade-in-opacity-from: 0;
 $fade-in-opacity-to: 1;
 
-/*-------------------
-  WEATHER-CARD-SIDES
----------------------*/
-
-//front
-$card-front-tex-align: center;
-$card-front-rotate: rotateY(0deg);
-$card-front-rotate-on-hover: rotateY(10deg);
-
-//verse
-$card-verse-rotate: rotateY(180deg);
-$card-verse-rotate-on-hover: rotateY(190deg);
-
 /*-----------------------
   WEATHER-CARD MAIN-INFO
 -------------------------*/
@@ -175,6 +162,7 @@ $main-info-wind-img-filter: invert(100%);
 //week-day-info - week 
 $week-border-top: 1px solid white;
 $week-padding: 5px 10px;
+$week-padding-x-small: 5px 30px;
 
 //week-day-info
 $week-day-info-color: white;
@@ -195,7 +183,7 @@ $day-temp-flex: 1;
 
 
 /*----------------------------------------
-  WEATHER-CARD - FRONT - INVERSE - STYLE
+  WEATHER-CARD - INVERSE - STYLE
 -----------------------------------------*/
 
 $card-inverse-color: black;

@@ -11,9 +11,6 @@
   box-shadow: $box-shadow;
   border-radius: $card-border-radius;
   position: relative;
-  // float: left;
-  transform-style: preserve-3d;
-  transition: transform 2.0s cubic-bezier(0,.75,.25,1);
   opacity: 1;
   animation: fadeIn 1s ease;
   cursor: pointer;
@@ -36,7 +33,9 @@
     overflow: hidden;
     margin: auto;
     color: $card-color;
-    background: white;
+    background: $card-bg-fallback;
+    background: $card-bg-gradient-webkit;
+    background: $card-bg-gradient;
 
     @media all and (max-width: $screen-x-small) {
       width: $card-width-380px;
@@ -44,39 +43,6 @@
       min-height: $card-height;
       border-radius: $card-border-radius-380px;
     }
-    
-  }
-
-/*-------------------
-  WEATHER-CARD-SIDES
----------------------*/
-
-  .front {
-    transform: $card-front-rotate;
-    text-align: $card-front-tex-align;
-  }
-
-  .verse {
-    transform: $card-verse-rotate;
-  }
-}
-
-.front-side {
-  transform: $card-front-rotate;
-  background: $card-bg-fallback;
-  background: $card-bg-gradient-webkit;
-  background: $card-bg-gradient;
-
-  &:hover {
-    // transform: $card-front-rotate-on-hover;
-  }
-}
-
-.back-side {
-  transform: $card-verse-rotate;
-
-  &:hover {
-    transform: $card-verse-rotate-on-hover;
   }
 }
 
@@ -86,7 +52,7 @@
 }
 
 /*----------------------------------------
-  WEATHER-CARD - FRONT - STYLE-BY-WEATHER
+  WEATHER-CARD - STYLE-BY-WEATHER
 -----------------------------------------*/
 
 /*-----------
@@ -279,13 +245,4 @@
 //night
 .bg-50n {
   background: url('./img/50n.png') !important;
-}
-
-.charts {
-  border-top: 1px solid #eeeeee !important;
-  border-bottom: 1px solid #cccccc;
-  height: 145px;
-  position: relative;
-  margin: 5px 5px 0px 5px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
 }

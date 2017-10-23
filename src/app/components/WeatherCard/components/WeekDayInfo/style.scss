@@ -8,6 +8,10 @@
   border-top: $week-border-top;
   padding:  $week-padding;
 
+  @media all and (max-width: $screen-x-small) {
+    padding: $week-padding-x-small;
+  }
+
   .week-day-info {
     display: flex;
 
@@ -39,7 +43,6 @@
     }
 
     .day-temp {
-      // flex: $day-temp-flex;
       display: flex;
       align-items: center flex-end;
       text-align: right;
