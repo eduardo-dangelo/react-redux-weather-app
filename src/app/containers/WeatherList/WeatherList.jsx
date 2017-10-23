@@ -23,7 +23,7 @@ class WeatherList extends Component {
             <img src={require('./img/weather-icon.png')} alt="icon"/>
           </div>
         ) : (
-          <div className="weather-list row">
+          <div className="weather-list">
             {weather.map(this.renderWeather)}
           </div>
         )}
