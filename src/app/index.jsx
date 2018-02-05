@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import './App.scss';
-import SearchBar from './containers/SearchBar/SearchBar';
-import WeatherList from './containers/WeatherList/WeatherList';
-import { Helmet } from "react-helmet";
+import React, { Component } from 'react'
+import './style.scss'
+import SearchBar from './components/SearchBar'
+import WeatherList from './components/WeatherList'
+import { Helmet } from "react-helmet"
 
 class App extends Component {
   render() {
@@ -22,4 +22,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

@@ -1,9 +1,13 @@
 import React, { Component } from 'react'; 
-import WeekDayInfo from './components/WeekDayInfo/WeekDayInfo';
-import MainInfo from './components/MainInfo/MainInfo';
+import WeekDayInfo from './components/WeekDayInfo/index';
+import MainInfo from './components/MainInfo/index';
 import './style.scss';
 
 class WeatherList extends Component {
+  handleCardClick = (data) => () => {
+    console.log('data', data);
+  }
+
   render() {
     const { cityData } = this.props;
     const name = cityData.city.name;
@@ -36,7 +40,7 @@ class WeatherList extends Component {
     ];
     
     return (
-      <div className="weather-card-container">
+      <div className="weather-card-container"  onClick={this.handleCardClick(cityData)}>
         <div className={`card bg-${cityData.list[0].weather[0].icon ? cityData.list[0].weather[0].icon : ''}`}>        
           <MainInfo
             name={name}

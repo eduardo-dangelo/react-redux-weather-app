@@ -1,19 +1,21 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import WeatherCard from '../../components/WeatherCard/WeatherCard';
-import './style.scss';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import WeatherCard from './components/WeatherCard'
+import './style.scss'
 
 class WeatherList extends Component {
-  renderWeather(cityData, key) {
-    return (
-      <WeatherCard cityData={cityData} key={key} />
-    );
+  renderWeather = (cityData, key) => {
+    if (cityData) {
+      return (
+        <WeatherCard cityData={cityData} key={key} />
+      )
+    }
   }
 
   render() {
     const { weather } = this.props;
-    console.log(weather.length);
     const initialState = weather.length === 0;
+
     return (
       <div className="internal-page">
         {initialState ? ( 
@@ -28,17 +30,21 @@ class WeatherList extends Component {
           </div>
         )}
         <div className="bottom-bar">
-          <a href="http://github.com/eduardo-dangelo/react-redux-weather-app" target="_blank" rel="noopener noreferrer">
+          <a
+            href="http://github.com/eduardo-dangelo/react-redux-weather-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src={require('./img/github-logo.png')} alt="github" />
           </a>
         </div>
       </div>
-    );
+    )
   }
 }
 
-function mapStateToProps({ weather }) {
-  return { weather };
-}
-
-export default connect(mapStateToProps)(WeatherList);
+export default connect(
+  (state) => ({
+    weather: state.weatherApp,
+  })
+)(WeatherList)
