@@ -1,17 +1,22 @@
-import React, { Component } from 'react'; 
-import WeekDayInfo from './components/WeekDayInfo/index';
-import MainInfo from './components/MainInfo/index';
+import React, { Component } from 'react'
+import WeekDayInfo from './components/WeekDayInfo/index'
+import MainInfo from './components/MainInfo/index'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { actions } from '../../../../reducer'
 import './style.scss';
 
 class WeatherList extends Component {
   handleCardClick = (data) => () => {
-    console.log('data', data);
+    const { actions } = this.props
+    actions.openModal()
+    console.log('data', data)
   }
 
   render() {
-    const { cityData } = this.props;
-    const name = cityData.city.name;
-    const country = cityData.city.country;
+    const { cityData } = this.props
+    const name = cityData.city.name
+    const country = cityData.city.country
 
     const dayNames = [
       'Sunday',
@@ -26,10 +31,10 @@ class WeatherList extends Component {
       'Tuesday',
       'Wednesday',
       'Thursday',
-    ];
+    ]
 
-    const dayIndex = new Date().getDay();
-    const day = dayNames[dayIndex];
+    const dayIndex = new Date().getDay()
+    const day = dayNames[dayIndex]
 
     const weekDayList = [
       {index: 1, dayNumber: 7},
@@ -37,7 +42,7 @@ class WeatherList extends Component {
       {index: 3, dayNumber: 23},
       {index: 4, dayNumber: 31},
       {index: 5, dayNumber: 39},
-    ];
+    ]
     
     return (
       <div className="weather-card-container"  onClick={this.handleCardClick(cityData)}>
@@ -62,13 +67,18 @@ class WeatherList extends Component {
                   desc={cityData ? cityData.list[week.dayNumber].weather[0].description : '-'}
                   tempMax={cityData ? cityData.list[week.dayNumber].main.temp_max : '-'}
                 />
-              );
+              )
             })}   
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default WeatherList;
+export default connect(
+  null,
+  (dispatch) => ({
+    actions: bindActionCreators(actions, dispatch),
+  }),
+)(WeatherList)

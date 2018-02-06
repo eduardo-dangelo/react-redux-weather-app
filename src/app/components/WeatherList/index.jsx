@@ -14,11 +14,11 @@ class WeatherList extends Component {
 
   render() {
     const { weather } = this.props;
-    const initialState = weather.length === 0;
+    const noCitySelected = weather.city.length === 0;
 
     return (
       <div className="internal-page">
-        {initialState ? ( 
+        {noCitySelected ? (
           <div className="intro-message">
             <h1>The Weather App</h1>
             <h1>Search for a city to receive weather information</h1>
@@ -26,7 +26,7 @@ class WeatherList extends Component {
           </div>
         ) : (
           <div className="weather-list">
-            {weather.map(this.renderWeather)}
+            {weather.city.map(this.renderWeather)}
           </div>
         )}
         <div className="bottom-bar">

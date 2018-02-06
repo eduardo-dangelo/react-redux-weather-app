@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './style.scss'
 import SearchBar from './components/SearchBar'
 import WeatherList from './components/WeatherList'
+import MoreInfoModal from './components/MoreInfoModal'
 import { Helmet } from "react-helmet"
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           </div>
         </header>
         <WeatherList />
+        <MoreInfoModal/>
       </div>
     );
   }
