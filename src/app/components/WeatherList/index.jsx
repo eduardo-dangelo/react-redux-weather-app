@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import WeatherCard from './components/WeatherCard'
+// import { actions } from '../../reducer'
+// import { bindActionCreators } from 'redux'
 import './style.scss'
 
 class WeatherList extends Component {
   renderWeather = (cityData, key) => {
     if (cityData) {
       return (
-        <WeatherCard cityData={cityData} key={key} />
+        <WeatherCard cityData={cityData} key={key}/>
       )
     }
   }
@@ -46,5 +48,8 @@ class WeatherList extends Component {
 export default connect(
   (state) => ({
     weather: state.weatherApp,
-  })
+  }),
+  // (dispatch) => ({
+  //   actions: bindActionCreators(actions, dispatch),
+  // }),
 )(WeatherList)

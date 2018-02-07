@@ -2,6 +2,7 @@ import axios from 'axios'
 const FETCH_WEATHER = 'weatherApp/FETCH_WEATHER'
 const OPEN_MODAL = 'weatherApp/OPEN_MODAL'
 const CLOSE_MODAL = 'weatherApp/CLOSE_MODAL'
+const SELECT_ITEM = 'weatherApp/SELECT_ITEM'
 
 const initialValues = {
   openModal: false,
@@ -27,6 +28,13 @@ export function reducer(state = initialValues, action) {
       return {
         ...state,
         openModal: false,
+        selectedCity: {},
+      };
+    case SELECT_ITEM:
+      return {
+        ...state,
+        selectedCity: action.payload,
+        openModal: true,
       };
     default:
       return state;
@@ -35,6 +43,7 @@ export function reducer(state = initialValues, action) {
 
 const openModal = () => ({ type: OPEN_MODAL })
 const closeModal = () => ({ type: CLOSE_MODAL })
+const selectItem = (data) => ({ type: SELECT_ITEM, payload: data })
 
 const fetchWeather = (city, country) => {
   const API_KEY = '6ebb39c9cac54387b3f3e1af2eb7378b'
@@ -52,4 +61,5 @@ export const actions = {
   fetchWeather,
   openModal,
   closeModal,
+  selectItem,
 }

@@ -9,8 +9,8 @@ import './style.scss';
 class WeatherList extends Component {
   handleCardClick = (data) => () => {
     const { actions } = this.props
-    actions.openModal()
-    console.log('data', data)
+
+    actions.selectItem(data)
   }
 
   render() {
