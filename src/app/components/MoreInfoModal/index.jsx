@@ -18,23 +18,26 @@ class MoreInfoModal extends Component {
     const { weather } = this.props
     console.log('city', weather.selectedCity)
     const item = weather.selectedCity && weather.selectedCity
+    console.log('item', item)
 
     if (weather.openModal && item) {
       return (
         <div>
           <div className="more-info-modal">
-            <h1>{item.city.name}</h1>
-            <h2>{item.city.country}</h2>
-            <p>Population: {item.city.population}</p>
+            <div className="modal-header">
+              <h2>{item.city.name}, {item.city.country}</h2>
+              <h3>Population: {item.city.population}</h3>
+            </div>
             <Row>
               <Col sm={6}>
-                <RadarChart/>
+                <RadarChart data={item.list}/>
               </Col>
               <Col sm={6}>
-                <LineChart/>
+                <LineChart data={item.list}/>
               </Col>
-              <Col sm={12}>
-                <BarChart/>
+              <Col sm={6}/>
+              <Col sm={6}>
+                <BarChart data={item.list}/>
               </Col>
             </Row>
           </div>
