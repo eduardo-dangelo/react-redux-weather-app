@@ -26,3 +26,16 @@ body {
   color: $header-color;
   box-shadow: $header-box-shadow;
 }
+
+.error-container {
+  background: rgba(255,0,0,0.6);
+  opacity: .5;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid #cb0000;
+
+  h4 {
+    color: #cb0000;
+    margin: 0;
+  }
+}

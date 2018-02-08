@@ -1,5 +1,6 @@
 import axios from 'axios'
 const FETCH_WEATHER = 'weatherApp/FETCH_WEATHER'
+const HANDLE_ERROR = 'weatherApp/HANDLE_ERROR'
 const OPEN_MODAL = 'weatherApp/OPEN_MODAL'
 const CLOSE_MODAL = 'weatherApp/CLOSE_MODAL'
 const SELECT_ITEM = 'weatherApp/SELECT_ITEM'
@@ -8,6 +9,8 @@ const initialValues = {
   openModal: false,
   selectedCity: {},
   city: [],
+  hasError: false,
+  lastRequest: {},
 }
 
 export function reducer(state = initialValues, action) {
@@ -18,7 +21,13 @@ export function reducer(state = initialValues, action) {
         city: [
           action.payload.data, ...state.city,
         ],
+        lastRequest: action.payload.data,
       };
+    case HANDLE_ERROR:
+      return {
+        ...state,
+        hasError: true,
+      }
     case OPEN_MODAL:
       return {
         ...state,

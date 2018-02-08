@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import WeatherCard from './components/WeatherCard'
-// import { actions } from '../../reducer'
-// import { bindActionCreators } from 'redux'
 import './style.scss'
 
 class WeatherList extends Component {
@@ -15,8 +13,8 @@ class WeatherList extends Component {
   }
 
   render() {
-    const { weather } = this.props;
-    const noCitySelected = weather.city.length === 0;
+    const { weather } = this.props
+    const noCitySelected = weather.city.length === 0
 
     return (
       <div className="internal-page">
@@ -49,7 +47,4 @@ export default connect(
   (state) => ({
     weather: state.weatherApp,
   }),
-  // (dispatch) => ({
-  //   actions: bindActionCreators(actions, dispatch),
-  // }),
 )(WeatherList)
