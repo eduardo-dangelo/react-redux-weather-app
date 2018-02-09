@@ -14,11 +14,13 @@ class WeatherList extends Component {
 
   render() {
     const { weather } = this.props
-    const noCitySelected = weather.city.length === 0
+    const noCitySearched = weather.city.length === 0
+    const hasSelectedCity = weather.selectedCity.city
+    console.log('hasSelectedCity', hasSelectedCity)
 
     return (
-      <div className="internal-page">
-        {noCitySelected ? (
+      <div className={`internal-page ${hasSelectedCity && 'disabled'}`}>
+        {noCitySearched ? (
           <div className="intro-message">
             <h1>The Weather App</h1>
             <h1>Search for a city to receive weather information</h1>
