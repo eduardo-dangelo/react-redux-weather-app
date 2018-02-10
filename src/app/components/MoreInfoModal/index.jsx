@@ -1,21 +1,34 @@
 import React, { Component } from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 import { connect } from'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from '../../reducer'
 import './style.scss'
-import RadarChart from './components/charts/Radar'
-import LineChart from './components/charts/Line'
-import BarChart from './components/charts/Bar'
+import WindChart from './components/charts/Wind'
+import TempChart from './components/charts/Temp'
+import HumidityChart from './components/charts/Humidity'
+import moment from 'moment'
 
 class MoreInfoModal extends Component {
+  state = {
+    activeChart: 'temp',
+  }
+
   handleCloseModal = () => {
     const { actions } = this.props
     actions.closeModal()
   }
 
+  handleChangeActiveChart = (value) => () => {
+    this.setState({
+      activeChart: value,
+    })
+  }
+
   render() {
     const { weather } = this.props
+    const { activeChart } = this.state
+    console.log('activeChart', activeChart)
     console.log('city', weather.selectedCity)
     const item = weather.selectedCity && weather.selectedCity
     console.log('item', item)
@@ -25,19 +38,44 @@ class MoreInfoModal extends Component {
         <div>
           <div className="more-info-modal">
             <div className="modal-header">
-              <h2>{item.city.name}, {item.city.country}</h2>
-              <h3>Population: {item.city.population}</h3>
+              <div className="title">
+                <h2>{item.city.name}, {item.city.country}</h2>
+                <span>Population: {item.city.population}</span>
+              </div>
+              <div className="date-and-time">
+                <h3>{moment().format('dddd')} - {moment().format("MMM Do YY")}</h3>
+                <span>{moment().format('L')}</span>
+              </div>
             </div>
             <Row>
-              <Col sm={6}>
-                <RadarChart data={item.list}/>
-              </Col>
-              <Col sm={6}>
-                <LineChart data={item.list}/>
-              </Col>
-              <Col sm={6}/>
-              <Col sm={6}>
-                <BarChart data={item.list}/>
+              <Col sm={12}>
+                <div className="chart-container">
+                  <div className="chart-header">
+                    <h5>Temperature</h5>
+                    <span>
+                      {Math.round(item.list[0].main.temp)}&#176;
+                    </span>
+                  </div>
+                  <TempChart data={item.list} activeChart={activeChart}/>
+                </div>
+                <div className="chart-container">
+                  <div className="chart-header">
+                    <h5>Wind</h5>
+                    <span>
+                      {Math.round(item.list[0].wind.speed * 3.6)} kmh
+                    </span>
+                  </div>
+                  <WindChart data={item.list} activeChart={activeChart}/>
+                </div>
+                <div className="chart-container">
+                  <div className="chart-header">
+                    <h5>Humidity</h5>
+                    <span>
+                      {Math.round(item.list[0].main.humidity)} %
+                    </span>
+                  </div>
+                  <HumidityChart data={item.list} activeChart={activeChart}/>
+                </div>
               </Col>
             </Row>
           </div>

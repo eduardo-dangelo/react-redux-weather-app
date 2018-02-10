@@ -22,9 +22,43 @@
   top: 60px;
   animation: modalFadeIn .5s ease-out;
   color: #eeecdc;
+  text-shadow: $text-shadow;
 
   .modal-header {
     border-bottom: #eeecdc 1px solid;
+    padding: 15px 0;
+
+    span {
+      font-size: 16px;
+    }
+
+    .title {
+      text-align: left;
+    }
+
+    .date-and-time {
+      text-align: right;
+    }
+  }
+
+  .chart-container {
+
+    .chart-header {
+      border-bottom: 1px solid #989687;
+      margin-bottom: 15px;
+      padding: 15px 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin: 0;
+        position: absolute;
+        right: 15px;
+        float: right;
+        font-size: 22px;
+      }
+    }
   }
 }
 

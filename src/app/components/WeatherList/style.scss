@@ -9,7 +9,7 @@
   max-width: $intenal-page-max-width-large;
   margin: auto;
   perspective-origin: $internal-page-perspective-origin;
-  opacity: .85;
+  opacity: 1;
 
   @media all and (max-width: $screen-large) {
     max-width: $intenal-page-max-width-medium;
