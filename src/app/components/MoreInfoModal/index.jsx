@@ -35,7 +35,7 @@ class MoreInfoModal extends Component {
 
     if (weather.openModal && item) {
       return (
-        <div>
+        <div className="modal-container" onClick={this.handleCloseModal}>
           <div className="more-info-modal">
             <div className="modal-header">
               <div className="title">
@@ -79,7 +79,7 @@ class MoreInfoModal extends Component {
               </Col>
             </Row>
           </div>
-          <div className="modal-container" onClick={this.handleCloseModal}/>
+          {/*<div className="modal-container" onClick={this.handleCloseModal}/>*/}
         </div>
       )
     }
