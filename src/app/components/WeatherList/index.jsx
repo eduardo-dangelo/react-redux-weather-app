@@ -5,7 +5,7 @@ import './style.scss'
 
 class WeatherList extends Component {
   renderWeather = (cityData, key) => {
-    if (cityData.list) {
+    if (cityData) {
       return (
         <WeatherCard cityData={cityData} key={key}/>
       )

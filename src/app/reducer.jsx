@@ -62,7 +62,7 @@ const fetchWeather = (city, country) => {
 
   return {
     type: FETCH_WEATHER,
-    payload: request
+    payload: request ? request : null
   };
 }
 
