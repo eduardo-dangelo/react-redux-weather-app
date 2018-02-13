@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './style.scss';
+import React, { Component } from 'react'
+import './style.scss'
 
 export default class WeekDayInfo extends Component {
   render() {
@@ -18,6 +18,6 @@ export default class WeekDayInfo extends Component {
           {Math.round(tempMax)}&#176;
         </div>
       </div>
-    );
+    )
   }
 }
