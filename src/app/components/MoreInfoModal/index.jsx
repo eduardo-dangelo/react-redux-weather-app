@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import { connect } from'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from '../../reducer'
@@ -76,10 +76,14 @@ class MoreInfoModal extends Component {
                   </div>
                   <HumidityChart data={item.list} activeChart={activeChart}/>
                 </div>
+                <div className="credits">
+                  <a href="https://openweathermap.org/" rel="noopener noreferrer" target="_blank">
+                    source: openweathermap.org
+                  </a>
+                </div>
               </Col>
             </Row>
           </div>
-          {/*<div className="modal-container" onClick={this.handleCloseModal}/>*/}
         </div>
       )
     }

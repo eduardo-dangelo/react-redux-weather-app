@@ -73,6 +73,18 @@
       }
     }
   }
+
+  .credits {
+    margin-top: 15px;
+    font-weight: lighter;
+    font-size: 12px;
+    opacity: 0.5;
+
+    a {
+      text-decoration: none;
+      color: #eeecdc;
+    }
+  }
 }
 
 @keyframes modalFadeIn {

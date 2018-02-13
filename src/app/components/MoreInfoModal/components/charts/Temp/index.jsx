@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Line } from 'react-chartjs-2'
+import { fill } from 'lodash'
 
 class TempChart extends Component {
   render() {
@@ -9,12 +10,21 @@ class TempChart extends Component {
     const temp = []
     const wind = []
     data.map((item, key) => {
+
       return (
         label.push(key),
         temp.push(item.main.temp),
         wind.push(item.wind.speed)
       )
     })
+
+    const filter1 = fill(label, '', 0, 40)
+    const filter2 = fill(filter1, 'Now', 0, 1)
+    const filter3 = fill(filter2, '24h', 8, 9)
+    const filter4 = fill(filter3, '48h', 16, 17)
+    const filter5 = fill(filter4, '72h', 24, 25)
+    const filter6 = fill(filter5, '96h', 32, 33)
+
 
     const datas = {
       labels: label,
@@ -50,7 +60,7 @@ class TempChart extends Component {
         tooltips: {
           callbacks: {
             label: function(tooltipItem) {
-              return tooltipItem.yLabel;
+              return (tooltipItem.yLabel);
             }
           }
         },
