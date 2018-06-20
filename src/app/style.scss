@@ -1,41 +1,41 @@
 @import "../styles/variables";
 
-/*-------------
+/**********
   GENERAL
---------------*/
+ *********/
 
 body {
   margin: 0;
   padding: 0;
+  background: $app-background;
   font-family: $app-font-family;
-  background: $app-background; 
 }
 
 .App {
   text-align: $app-text-align;
 }
 
-/*-------------
+/*********
   HEADER
---------------*/
+ ********/
 
 .App-header {
-  background: $header-bg;
-  border-bottom: $header-border-bottom;
-  padding: $header-padding;
   color: $header-color;
+  background: $header-bg;
+  padding: $header-padding;
   box-shadow: $header-box-shadow;
+  border-bottom: $header-border-bottom;
 }
 
 .error-container {
-  background: rgba(255,0,0,0.6);
   opacity: .5;
   width: 100%;
   padding: 15px;
+  background: rgba(255,0,0,0.6);
   border-bottom: 1px solid #cb0000;
 
   h4 {
-    color: #cb0000;
     margin: 0;
+    color: #cb0000;
   }
 }

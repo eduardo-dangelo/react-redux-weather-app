@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import './style.scss'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { connect } from 'react-redux'
 import SearchBar from './components/SearchBar'
 import WeatherList from './components/WeatherList'
 import MoreInfoModal from './components/MoreInfoModal'
-import { Helmet } from 'react-helmet'
-import { connect } from 'react-redux'
+import './style.scss'
 
-class App extends Component {
+class App extends React.Component {
   state = {
     displayError: false,
   }

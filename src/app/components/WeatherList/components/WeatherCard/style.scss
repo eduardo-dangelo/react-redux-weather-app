@@ -12,13 +12,38 @@
   border-radius: $card-border-radius;
   position: relative;
   opacity: 1;
+  filter: grayscale(60%);
   animation: fadeIn 1s ease;
   cursor: pointer;
-  transition: .3s ease;
+  transition: .6s ease;
+  overflow: hidden;
+
+  &:before {
+    z-index: 2;
+    content: '';
+    width: 720px;
+    height: 160px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.4), rgba(255,255,255,0));
+    //border: 1px solid orange;
+    //box-shadow: 0 0 28px white;
+    position: absolute;
+    transform: rotateZ(50deg);
+    top: 145px;
+    left: -185%;
+    opacity: 1;
+  }
 
   &:hover {
     box-shadow: $hover-box-shadow;
-    transform: translate(0px, 2px);
+    opacity: 1;
+    filter: grayscale(0%);
+    //transform: translate(0px, 2px);
+
+    &:before {;
+      left: 75%;
+      transition: .5s ease;
+      //transition: .4s ease;
+    }
   }
 
   @media all and (max-width: 400px) {
