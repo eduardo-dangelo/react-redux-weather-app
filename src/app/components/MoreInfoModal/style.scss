@@ -122,13 +122,39 @@
      ***************/
 
     &.modal-bg-04d {
-      background: url('./img/04d.jpg') !important;
       color: $card-inverse-color !important;
+      background: url('./img/04d.jpg') !important;
       border-bottom: $card-inverse-border !important;
     }
 
     &.modal-bg-04n {
       background: url('./img/04n.jpg') !important;
+    }
+
+    /*************
+      shower rain
+    **************/
+
+    &.modal-bg-09d {
+      background: url('./img/09d.jpg') !important;
+    }
+
+    &.modal-bg-09n {
+      background: url('./img/09n.jpg') !important;
+    }
+
+    /******
+      rain
+    *******/
+
+    &.modal-bg-10d {
+      color: $card-inverse-color !important;
+      background: url('./img/10d.jpg') !important;
+      border-bottom: $card-inverse-border !important;
+    }
+
+    &.modal-bg-10n {
+      background: url('./img/10n.jpg') !important;
     }
   }
 
