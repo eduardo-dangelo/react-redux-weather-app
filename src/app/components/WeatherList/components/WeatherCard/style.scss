@@ -1,8 +1,8 @@
 @import "../../../../../styles/variables";
 
-/*-------------
-  WEATHER-CARD
---------------*/
+/************************
+  WEATHER-CARD-CONTAINER
+ ************************/
 
 .weather-card-container {
   margin: 15px;
@@ -12,7 +12,7 @@
   border-radius: $card-border-radius;
   position: relative;
   opacity: 1;
-  filter: grayscale(60%);
+  filter: grayscale(50%);
   animation: fadeIn 1s ease;
   cursor: pointer;
   transition: .6s ease;
@@ -23,7 +23,7 @@
     content: '';
     width: 720px;
     height: 160px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.4), rgba(255,255,255,0));
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.2), rgba(255,255,255,0));
     //border: 1px solid orange;
     //box-shadow: 0 0 28px white;
     position: absolute;
@@ -56,6 +56,10 @@
     min-height: $card-height;
   }
   
+  /*************
+    WEATER-CARD
+   *************/
+  
 
   .card {
     width: $card-width;
@@ -86,43 +90,38 @@
   to { opacity: $fade-in-opacity-to; }
 }
 
-/*----------------------------------------
+/*********************************
   WEATHER-CARD - STYLE-BY-WEATHER
------------------------------------------*/
+ *********************************/
 
-/*-----------
+/***********
   clear sky
----------- -*/
+************/
 
-//day
 .bg-01d {
   background: url('./img/01d.png') !important;
 }
 
-//night
 .bg-01n {
   background: url('./img/01n.png') !important;
 }
 
-/*-------------
+/************
   Few clouds
--------------*/
+*************/
 
-//day
 .bg-02d {
   background: url('./img/02d.png') !important;
 }
 
-//night
 .bg-02n {
   background: url('./img/02n.png') !important;
 }
 
-/*-------------------
+/******************
   scattered clouds
--------------------*/
+*******************/
 
-//day
 .bg-03d {
   background: url('./img/03d.png') !important;
   color: $card-inverse-color !important;
@@ -149,16 +148,14 @@
   }
 }
 
-//night
 .bg-03n {
   background: url('./img/03n.png') !important;
 }
 
-/*-----------
+/***************
   broken clouds
------------*/
+****************/
 
-//day
 .bg-04d {
   background: url('./img/04d.png') !important;
   color: $card-inverse-color !important;
@@ -185,30 +182,26 @@
   }
 }
 
-//night
 .bg-04n {
   background: url('./img/04n.png') !important;
 }
 
-/*-----------
+/*************
   shower rain
------------*/
+**************/
 
-//day
 .bg-09d {
   background: url('./img/09d.png') !important;
 }
 
-//night
 .bg-09n {
   background: url('./img/09n.png') !important;
 }
 
-/*-----------
+/******
   rain
------------*/
+*******/
 
-//day
 .bg-10d {
   background: url('./img/10d.png') !important;
   color: $card-inverse-color !important;
@@ -235,49 +228,42 @@
   }
 }
 
-//night
 .bg-10n {
   background: url('./img/10n.png') !important;
 }
 
-/*-----------
+/**************
   thunderstorm
------------*/
+***************/
 
-//day
 .bg-11d {
   background: url('./img/11d.png') !important;
 }
 
-//night
 .bg-11n {
   background: url('./img/11n.png') !important;
 }
 
-/*-----------
+/******
   snow
------------*/
+*******/
 
-//day
 .bg-13d {
   background: url('./img/13d.png') !important;
 }
 
-//night
 .bg-13n {
   background: url('./img/13n.png') !important;
 }
 
-/*-----------
+/******
   mist
------------*/
+*******/
 
-//day
 .bg-50d {
   background: url('./img/50d.png') !important;
 }
 
-//night
 .bg-50n {
   background: url('./img/50n.png') !important;
 }
