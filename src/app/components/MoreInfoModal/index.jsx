@@ -28,16 +28,13 @@ class MoreInfoModal extends Component {
   render() {
     const { weather } = this.props
     const { activeChart } = this.state
-    console.log('activeChart', activeChart)
-    console.log('city', weather.selectedCity)
     const item = weather.selectedCity && weather.selectedCity
-    console.log('item', item)
 
     if (weather.openModal && item) {
       return (
         <div className="modal-container" onClick={this.handleCloseModal}>
           <div className="more-info-modal">
-            <div className="modal-header">
+            <div className="modal-header modal-bg-04n">
               <div className="title">
                 <h2>{item.city.name}, {item.city.country}</h2>
                 <span>Population: {item.city.population}</span>

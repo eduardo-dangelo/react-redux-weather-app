@@ -1,39 +1,49 @@
 @import "../../../styles/variables";
 
 .modal-container {
-  position: absolute;
+  top: 0;
+  z-index: 3;
   width: 100%;
   min-height: 100%;
-  top: 0;
-  background: transparent;
-  z-index: 3;
+  position: absolute;
   padding-bottom: 120px;
+  background: transparent;
 
   &:before {
-    content: '';
-    position: fixed;
-    width: 100%;
-    min-height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0,0,0,0.8);
+    content: '';
+    width: 100%;
+    position: fixed;
+    min-height: 100%;
+    background: rgba(0,0,0,0.2);
   }
 }
 
 .more-info-modal {
-  background: rgba(255,255,255,0);
   width: 80%;
-  max-width: 1400px;
-  height: auto;
-  margin: auto;
-  position: relative;
   top: 60px;
   z-index: 4;
-  border-radius: $radius-small;
   opacity: 1;
-  animation: modalFadeIn .5s ease-out;
+  height: auto;
+  margin: auto;
   color: #eeecdc;
+  overflow: hidden;
+  max-width: 1200px;
+  position: relative;
+  border: $card-border;
+  box-shadow: $box-shadow;
   text-shadow: $text-shadow;
+  border-radius: $radius-small;
+  background: rgba(19, 13, 19, 0.9);
+  animation: modalFadeIn .5s ease-out;
+  transition: .3s ease;
+
+  &:hover {
+    opacity: 1;
+    box-shadow: $hover-box-shadow;
+    background: rgba(19, 13, 19, 1);
+  }
 
   @media all and (max-width: 600px) {
     width: auto;
@@ -47,9 +57,15 @@
     }
   }
 
+  /**************
+    MODAL-HEADER
+   **************/
+
   .modal-header {
+    padding: 15px;
+    background: $card-bg-fallback;
     border-bottom: #eeecdc 1px solid;
-    padding: 15px 0;
+    box-shadow: $inset-box-shadow;
 
     span {
       font-size: 16px;
@@ -62,37 +78,90 @@
     .date-and-time {
       text-align: right;
     }
+
+    /***********
+      clear sky
+    ************/
+
+    &.modal-bg-01d {
+      background: url('./img/01d2.jpg') !important;
+    }
+
+    &.modal-bg-01n {
+      background: url('./img/01n.jpg') !important;
+    }
+
+    /************
+      Few clouds
+    *************/
+
+    &.modal-bg-02d {
+      background: url('./img/02d2.jpg') !important;
+    }
+
+    &.modal-bg-02n {
+      background: url('./img/02n3.jpg') !important;
+    }
+
+    /******************
+      Scattered clouds
+    *******************/
+
+    &.modal-bg-03d {
+      background: url('./img/03d.jpg') !important;
+      color: $card-inverse-color !important;
+      border-bottom: $card-inverse-border !important;
+    }
+
+    &.modal-bg-03n {
+      background: url('./img/03nd.jpg') !important;
+    }
+
+    /***************
+      Broken clouds
+     ***************/
+
+    &.modal-bg-04d {
+      background: url('./img/04d.jpg') !important;
+      color: $card-inverse-color !important;
+      border-bottom: $card-inverse-border !important;
+    }
+
+    &.modal-bg-04n {
+      background: url('./img/04n.jpg') !important;
+    }
   }
 
   .chart-container {
+    padding: 15px;
 
     .chart-header {
-      border-bottom: 1px solid #989687;
-      margin-bottom: 15px;
-      padding: 15px 0;
       height: 60px;
       display: flex;
+      padding: 15px 0;
       align-items: center;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #989687;
 
       span {
         margin: 0;
-        position: absolute;
-        right: 15px;
+        right: 30px;
         float: right;
         font-size: 22px;
+        position: absolute;
       }
     }
   }
 
   .credits {
+    opacity: 0.5;
+    font-size: 12px;
     margin-top: 15px;
     font-weight: lighter;
-    font-size: 12px;
-    opacity: 0.5;
 
     a {
-      text-decoration: none;
       color: #eeecdc;
+      text-decoration: none;
     }
   }
 }
