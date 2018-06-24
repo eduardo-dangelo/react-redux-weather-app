@@ -34,7 +34,7 @@ class MoreInfoModal extends React.Component {
       return (
         <div className="modal-container" onClick={this.handleCloseModal}>
           <div className="more-info-modal">
-            <div className="modal-header modal-bg-50n">
+            <div className={`modal-header modal-bg-${item.list[0].weather[0].icon}`}>
               <div className="title">
                 <h2>{item.city.name}, {item.city.country}</h2>
                 <span>Population: {item.city.population}</span>
