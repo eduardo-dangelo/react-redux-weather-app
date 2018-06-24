@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import { Row, Col } from 'react-bootstrap'
+import React from 'react'
+import moment from 'moment'
 import { connect } from'react-redux'
-import { bindActionCreators } from 'redux'
 import { actions } from '../../reducer'
-import './style.scss'
+import { Row, Col } from 'react-bootstrap'
+import { bindActionCreators } from 'redux'
 import WindChart from './components/charts/Wind'
 import TempChart from './components/charts/Temp'
 import HumidityChart from './components/charts/Humidity'
-import moment from 'moment'
+import './style.scss'
 
-class MoreInfoModal extends Component {
+class MoreInfoModal extends React.Component {
   state = {
     activeChart: 'temp',
   }
@@ -34,7 +34,7 @@ class MoreInfoModal extends Component {
       return (
         <div className="modal-container" onClick={this.handleCloseModal}>
           <div className="more-info-modal">
-            <div className="modal-header modal-bg-10d">
+            <div className="modal-header modal-bg-50n">
               <div className="title">
                 <h2>{item.city.name}, {item.city.country}</h2>
                 <span>Population: {item.city.population}</span>

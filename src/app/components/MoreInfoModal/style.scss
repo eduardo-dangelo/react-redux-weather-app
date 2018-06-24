@@ -102,7 +102,7 @@
     &.modal-bg-02n {
       background: url('./img/02n3.jpg') !important;
     }
-
+modal-
     /******************
       Scattered clouds
     *******************/
@@ -110,7 +110,6 @@
     &.modal-bg-03d {
       background: url('./img/03d.jpg') !important;
       color: $card-inverse-color !important;
-      border-bottom: $card-inverse-border !important;
     }
 
     &.modal-bg-03n {
@@ -124,7 +123,6 @@
     &.modal-bg-04d {
       color: $card-inverse-color !important;
       background: url('./img/04d.jpg') !important;
-      border-bottom: $card-inverse-border !important;
     }
 
     &.modal-bg-04n {
@@ -132,7 +130,7 @@
     }
 
     /*************
-      shower rain
+      Shower rain
     **************/
 
     &.modal-bg-09d {
@@ -144,17 +142,53 @@
     }
 
     /******
-      rain
+      Rain
     *******/
 
     &.modal-bg-10d {
       color: $card-inverse-color !important;
       background: url('./img/10d.jpg') !important;
-      border-bottom: $card-inverse-border !important;
     }
 
     &.modal-bg-10n {
       background: url('./img/10n.jpg') !important;
+    }
+
+
+    /**************
+      Thunderstorm
+    ***************/
+
+    &.modal-bg-11d {
+      background: url('./img/11d.jpg') !important;
+    }
+
+    &.modal-bg-11n {
+      background: url('./img/11n.jpg') !important;
+    }
+
+    /******
+      Snow
+    *******/
+
+    &.modal-bg-13d {
+      background: url('./img/13d.jpg') !important;
+    }
+
+    &.modal-bg-13n {
+      background: url('./img/13n.jpg') !important;
+    }
+
+    /******
+      Mist
+    *******/
+
+    &.modal-bg-50d {
+      background: url('./img/50d.jpg') !important;
+    }
+
+    &.modal-bg-50n {
+      background: url('./img/50n.jpg') !important;
     }
   }
 
