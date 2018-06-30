@@ -10,6 +10,7 @@ import { get } from 'lodash'
 import './style.scss'
 import MainInfo from "../WeatherList/components/WeatherCard/components/MainInfo";
 import WeekDayInfo from "../WeatherList/components/WeatherCard/components/WeekDayInfo";
+import FaTimes from 'react-icons/lib/fa/times-circle'
 
 class MoreInfoModal extends React.Component {
   state = {
@@ -66,6 +67,7 @@ class MoreInfoModal extends React.Component {
                     <span className="city-name">
                       {weatherCity.city.name}, {weatherCity.city.country}
                     </span>
+                    <FaTimes/>
                   </a>
                 )
               })}

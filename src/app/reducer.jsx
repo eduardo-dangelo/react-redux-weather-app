@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { forEach, find, get } from 'lodash'
 
 const FETCH_WEATHER = 'weatherApp/FETCH_WEATHER'
 const SELECT_CITY = 'weatherApp/SELECT_CITY'
@@ -23,7 +24,7 @@ export function reducer(state = initialValues, action) {
         ...state,
         activeCity: action.payload.data,
         lastRequest: action.payload.data,
-        city: [ action.payload.data, ...state.city ],
+        city: [ ...state.city, action.payload.data ],
       };
     case SELECT_CITY:
       return {
@@ -61,12 +62,33 @@ const fetchWeather = (city, country) => {
   const API_KEY = process.env.REACT_APP_API_KEY
   const ROOT_URL = `//api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`
   const url = `${ROOT_URL}&q=${city},${country}&units=metric`
-  const request = axios.get(url)
 
-  return {
-    type: FETCH_WEATHER,
-    payload: request ? request : null
-  };
+  return (dispatch, getState) => {
+    return axios.get(url)
+      .then((response) => {
+        const weatherApp = getState().weatherApp
+
+        if (weatherApp.city.length === 0) {
+          dispatch({type: FETCH_WEATHER, payload: response })
+        }
+
+        if (weatherApp.city.length > 0) {
+          let hasCityBeenFecthed = false
+
+          forEach(weatherApp.city, (city) => {
+            if (city.city.id === response.data.city.id) {
+              hasCityBeenFecthed = true
+            }
+          })
+
+          if (hasCityBeenFecthed) {
+            dispatch({ type: SELECT_CITY, payload: response.data })
+          } else {
+            dispatch({type: FETCH_WEATHER, payload: response })
+          }
+        }
+      })
+  }
 }
 
 export const actions = {
