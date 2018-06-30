@@ -52,8 +52,6 @@ class MoreInfoModal extends React.Component {
       {index: 5, dayNumber: 39},
     ]
 
-    console.log('weather.active', weather.activeCity)
-
     if (item) {
       return (
         <div className="modal-container">
@@ -65,7 +63,9 @@ class MoreInfoModal extends React.Component {
                     onClick={this.selectCity(weatherCity)}
                     className={weather.activeCity.city.id === weatherCity.city.id ? 'active' : ''}
                   >
-                    {weatherCity.city.name}, {weatherCity.city.country}
+                    <span className="city-name">
+                      {weatherCity.city.name}, {weatherCity.city.country}
+                    </span>
                   </a>
                 )
               })}
