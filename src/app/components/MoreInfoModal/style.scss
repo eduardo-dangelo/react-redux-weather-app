@@ -5,7 +5,7 @@
   z-index: 3;
   width: 100%;
   min-height: 100%;
-  position: absolute;
+  //position: absolute;
   padding-bottom: 120px;
   background: transparent;
 
@@ -22,7 +22,7 @@
 
 .more-info-modal {
   width: 80%;
-  top: 60px;
+  //top: 90px;
   z-index: 4;
   opacity: 1;
   height: auto;
@@ -32,16 +32,16 @@
   max-width: 1200px;
   position: relative;
   border: $card-border;
-  box-shadow: $box-shadow;
+  box-shadow: $inset-box-shadow;
   text-shadow: $text-shadow;
   border-radius: $radius-small;
-  background: rgba(19, 13, 19, 0.9);
-  animation: modalFadeIn .5s ease-out;
+  background: rgba(19, 13, 19, 1);
+  //animation: modalFadeIn .5s ease-out;
   transition: .3s ease;
 
   &:hover {
     opacity: 1;
-    box-shadow: $hover-box-shadow;
+    //box-shadow: $hover-box-shadow;
     background: rgba(19, 13, 19, 1);
   }
 
@@ -49,7 +49,7 @@
     width: auto;
     margin: 15px;
 
-    .modal-header {
+    .modal-hero {
 
       .date-and-time {
         display: none;
@@ -61,11 +61,81 @@
     MODAL-HEADER
    **************/
 
-  .modal-header {
+  .modal-tabs {
+    height: 35px;
+    text-align: left;
+    position: relative;
+    border-bottom: 1px solid white;
+    margin-bottom: 1px;
+
+    a {
+      //border: 1px solid orange;
+      float: left;
+      padding: 5px 15px;
+      position: relative;
+      z-index: 1;
+      //min-width: 240px;
+      cursor: pointer;
+      bottom: 0;
+      text-shadow: none;
+      font-weight: 100 !important;
+
+      &:before {
+        content: "";
+        //box-shadow: 0 0 12px rgba(0,0,0,1);
+        position: absolute;
+        border-bottom: 29px solid rgb(71, 69, 70);;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        height: 0;
+        left: -5%;
+        width: 110%;
+        z-index: -1;
+        bottom: 0;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        border-bottom: 30px solid rgb(255, 248, 252);
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        height: 0;
+        left: -6%;
+        width: 112%;
+        z-index: -2;
+        bottom: 0;
+      }
+
+      &.active {
+        z-index: 2;
+        bottom: -1px;
+
+        &:before {
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-bottom: 30px solid rgba(19, 13, 19, 1);;
+        }
+
+        &:after {
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-bottom: 31px solid rgb(255, 248, 252);
+        }
+      }
+    }
+  }
+
+  /**************
+    MODAL-HERO
+   **************/
+
+  .modal-hero {
     padding: 15px;
     background: $card-bg-fallback;
     border-bottom: #eeecdc 1px solid;
     box-shadow: $inset-box-shadow;
+    height: 99px;
 
     span {
       font-size: 16px;
@@ -73,21 +143,23 @@
 
     .title {
       text-align: left;
+      float: left;
     }
 
     .date-and-time {
       text-align: right;
+      float: right;
     }
 
     /***********
       clear sky
     ************/
 
-    &.modal-bg-01d {
+    &.hero-bg-01d {
       background: url('./img/01d2.jpg') !important;
     }
 
-    &.modal-bg-01n {
+    &.hero-bg-01n {
       background: url('./img/01n.jpg') !important;
     }
 
@@ -95,24 +167,24 @@
       Few clouds
     *************/
 
-    &.modal-bg-02d {
+    &.hero-bg-02d {
       background: url('./img/02d2.jpg') !important;
     }
 
-    &.modal-bg-02n {
+    &.hero-bg-02n {
       background: url('./img/02n3.jpg') !important;
     }
-modal-
+
     /******************
       Scattered clouds
     *******************/
 
-    &.modal-bg-03d {
+    &.hero-bg-03d {
       background: url('./img/03d.jpg') !important;
       color: $card-inverse-color !important;
     }
 
-    &.modal-bg-03n {
+    &.hero-bg-03n {
       background: url('./img/03nd.jpg') !important;
     }
 
@@ -120,12 +192,12 @@ modal-
       Broken clouds
      ***************/
 
-    &.modal-bg-04d {
+    &.hero-bg-04d {
       color: $card-inverse-color !important;
       background: url('./img/04d.jpg') !important;
     }
 
-    &.modal-bg-04n {
+    &.hero-bg-04n {
       background: url('./img/04n.jpg') !important;
     }
 
@@ -133,11 +205,11 @@ modal-
       Shower rain
     **************/
 
-    &.modal-bg-09d {
+    &.hero-bg-09d {
       background: url('./img/09d.jpg') !important;
     }
 
-    &.modal-bg-09n {
+    &.hero-bg-09n {
       background: url('./img/09n.jpg') !important;
     }
 
@@ -145,12 +217,12 @@ modal-
       Rain
     *******/
 
-    &.modal-bg-10d {
+    &.hero-bg-10d {
       color: $card-inverse-color !important;
       background: url('./img/10d.jpg') !important;
     }
 
-    &.modal-bg-10n {
+    &.hero-bg-10n {
       background: url('./img/10n.jpg') !important;
     }
 
@@ -159,11 +231,11 @@ modal-
       Thunderstorm
     ***************/
 
-    &.modal-bg-11d {
+    &.hero-bg-11d {
       background: url('./img/11d.jpg') !important;
     }
 
-    &.modal-bg-11n {
+    &.hero-bg-11n {
       background: url('./img/11n.jpg') !important;
     }
 
@@ -171,11 +243,11 @@ modal-
       Snow
     *******/
 
-    &.modal-bg-13d {
+    &.hero-bg-13d {
       background: url('./img/13d.jpg') !important;
     }
 
-    &.modal-bg-13n {
+    &.hero-bg-13n {
       background: url('./img/13n.jpg') !important;
     }
 
@@ -183,17 +255,18 @@ modal-
       Mist
     *******/
 
-    &.modal-bg-50d {
+    &.hero-bg-50d {
       background: url('./img/50d.jpg') !important;
     }
 
-    &.modal-bg-50n {
+    &.hero-bg-50n {
       background: url('./img/50n.jpg') !important;
     }
   }
 
   .chart-container {
     padding: 15px;
+
 
     .chart-header {
       height: 60px;
@@ -202,6 +275,12 @@ modal-
       align-items: center;
       margin-bottom: 15px;
       border-bottom: 1px solid #989687;
+
+      img {
+        width: 25px;
+        //margin-top: 10px;
+        filter: invert(100%);
+      }
 
       span {
         margin: 0;

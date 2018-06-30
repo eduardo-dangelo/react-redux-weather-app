@@ -1,0 +1,21 @@
+.display-mode-container {
+  padding: 15px;
+  //border: 1px solid orange;
+
+  .btn-container {
+    margin: auto;
+    position: relative;
+    text-align: center;
+    //border: 1px solid orange;
+
+    .btn {
+      border: none;
+      border-radius: 0;
+      background: transparent;
+
+      &:first-child {
+        border-right: 1px solid black;
+      }
+    }
+  }
+}

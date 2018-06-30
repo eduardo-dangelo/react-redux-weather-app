@@ -2,9 +2,12 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
 import SearchBar from './components/SearchBar'
-import WeatherList from './components/WeatherList'
-import MoreInfoModal from './components/MoreInfoModal'
+import WeatherCardList from './components/WeatherList'
+import WeatherStatsList from './components/MoreInfoModal'
+import DisplayModeSelector from './components/DisplayModeSelector'
 import './style.scss'
+import { bindActionCreators } from 'redux'
+import { actions } from './reducer'
 
 class App extends React.Component {
   state = {
@@ -27,6 +30,18 @@ class App extends React.Component {
     }
   }
 
+  renderWeatherList = () => {
+    const { weather } = this.props
+
+    if (weather.displayMode === 'card' ) {
+      return <WeatherCardList />
+    }
+
+    if (weather.displayMode === 'stats' ) {
+      return <WeatherStatsList/>
+    }
+  }
+
   render() {
     const { displayError } = this.state
     return (
@@ -44,8 +59,8 @@ class App extends React.Component {
             <h4>404! city not found</h4>
           </div>
         )}
-        <WeatherList />
-        <MoreInfoModal/>
+        <DisplayModeSelector/>
+        {this.renderWeatherList()}
       </div>
     );
   }
@@ -54,5 +69,8 @@ class App extends React.Component {
 export default connect(
   (state) => ({
     weather: state.weatherApp,
+  }),
+  (dispatch) => ({
+    actions: bindActionCreators(actions, dispatch),
   }),
 )(App)

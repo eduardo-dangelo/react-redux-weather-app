@@ -1,59 +1,61 @@
 import axios from 'axios'
 
-const OPEN_MODAL = 'weatherApp/OPEN_MODAL'
-const CLOSE_MODAL = 'weatherApp/CLOSE_MODAL'
-const SELECT_ITEM = 'weatherApp/SELECT_ITEM'
-const HANDLE_ERROR = 'weatherApp/HANDLE_ERROR'
 const FETCH_WEATHER = 'weatherApp/FETCH_WEATHER'
+const SELECT_CITY = 'weatherApp/SELECT_CITY'
+const UNSELECT_CITY = 'weatherApp/UNSELECT_CITY'
+const CHANGE_DISPLAY_MODE = 'weatherApp/CHANGE_DISPLAY_MODE'
+const HANDLE_ERROR = 'weatherApp/HANDLE_ERROR'
 
 const initialValues = {
   city: [],
+  activeCity: {},
   lastRequest: {},
   selectedCity: {},
+  displayMode: 'card',
+  openCardMenu: false,
   hasError: false,
-  openModal: false,
 }
 
 export function reducer(state = initialValues, action) {
   switch (action.type) {
-    case OPEN_MODAL:
+    case FETCH_WEATHER:
       return {
         ...state,
-        openModal: true,
+        activeCity: action.payload.data,
+        lastRequest: action.payload.data,
+        city: [ action.payload.data, ...state.city ],
       };
-    case CLOSE_MODAL:
+    case SELECT_CITY:
       return {
         ...state,
-        openModal: false,
+        openCardMenu: true,
+        activeCity: action.payload,
+        selectedCity: action.payload,
+      };
+    case UNSELECT_CITY:
+      return {
+        ...state,
+        openCardMenu: false,
         selectedCity: {},
       };
-    case SELECT_ITEM:
+    case CHANGE_DISPLAY_MODE:
       return {
         ...state,
-        selectedCity: action.payload,
-        openModal: true,
+        displayMode: action.payload,
       };
     case HANDLE_ERROR:
       return {
         ...state,
         hasError: true,
       };
-    case FETCH_WEATHER:
-      return {
-        ...state,
-        city: [
-          action.payload.data, ...state.city,
-        ],
-        lastRequest: action.payload.data,
-      };
     default:
       return state;
   }
 }
 
-const openModal = () => ({ type: OPEN_MODAL })
-const closeModal = () => ({ type: CLOSE_MODAL })
-const selectItem = (data) => ({ type: SELECT_ITEM, payload: data })
+const selectCity = (data) => ({ type: SELECT_CITY, payload: data })
+const unselectCity = () => ({ type: UNSELECT_CITY })
+const changeDisplayMode = (displayMode) => ({ type: CHANGE_DISPLAY_MODE, payload: displayMode })
 
 const fetchWeather = (city, country) => {
   const API_KEY = process.env.REACT_APP_API_KEY
@@ -68,8 +70,8 @@ const fetchWeather = (city, country) => {
 }
 
 export const actions = {
-  openModal,
-  closeModal,
-  selectItem,
+  selectCity,
+  unselectCity,
   fetchWeather,
+  changeDisplayMode
 }

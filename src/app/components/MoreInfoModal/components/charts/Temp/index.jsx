@@ -68,7 +68,7 @@ class TempChart extends Component {
       <div>
         <Line
           width={100}
-          height={250}
+          height={140}
           data={chartData}
           options={options}
         />

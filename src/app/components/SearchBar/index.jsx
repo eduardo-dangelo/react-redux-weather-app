@@ -7,7 +7,7 @@ import './style.scss'
 
 class SearchBar extends Component {
   state = {
-    city: '',
+    city: 'London, Uk',
     country: ''
   }
 
