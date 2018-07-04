@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { forEach, find, get } from 'lodash'
+import { forEach } from 'lodash'
 
 const FETCH_WEATHER = 'weatherApp/FETCH_WEATHER'
 const SELECT_CITY = 'weatherApp/SELECT_CITY'
@@ -90,6 +90,7 @@ const fetchWeather = (city, country) => {
       })
   }
 }
+
 
 export const actions = {
   selectCity,

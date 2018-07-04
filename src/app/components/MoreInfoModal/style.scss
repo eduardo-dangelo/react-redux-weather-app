@@ -70,6 +70,10 @@
     display: flex;
     flex-wrap: wrap;
 
+    &.only-child {
+      border-bottom: 1px solid rgba(19, 13, 19, 1);
+    }
+
     a {
       flex: 1;
       padding: 5px 15px;
@@ -116,7 +120,7 @@
       }
 
       &:first-child {
-        margin-left: 0;
+        margin-left: 2px;
       }
 
       &:before {
@@ -130,7 +134,7 @@
         width: calc(100% - 2px);
         z-index: -1;
         bottom: 0;
-        animation: TabBeforeIn .6s ease;
+        animation: TabBeforeIn .4s ease;
       }
 
       &:after {
@@ -144,7 +148,7 @@
         width: calc(100%);
         z-index: -2;
         bottom: 0;
-        animation: TabIn .6s ease;
+        animation: TabIn .4s ease;
       }
 
       &.active {
@@ -156,12 +160,32 @@
           border-left: 15px solid transparent;
           border-right: 15px solid transparent;
           border-bottom: 30px solid rgba(19, 13, 19, 1);
+          //animation: TabBeforeIn .6s ease;
         }
 
         &:after {
           border-left: 15px solid transparent;
           border-right: 15px solid transparent;
           border-bottom: 31px solid rgb(255, 248, 252);
+          //animation: TabIn .6s ease;
+        }
+      }
+
+      &.only-child {
+        bottom: 0;
+        cursor: initial;
+
+        svg {
+          display: none;
+        }
+
+        &:before {
+          animation: none;
+        }
+
+        &:after {
+          border-bottom: 31px solid rgba(19, 13, 19, 1);
+          animation: none;
         }
       }
     }

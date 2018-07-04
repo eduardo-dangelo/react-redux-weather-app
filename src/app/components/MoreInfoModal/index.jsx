@@ -10,14 +10,10 @@ import { get } from 'lodash'
 import './style.scss'
 import MainInfo from "../WeatherList/components/WeatherCard/components/MainInfo";
 import WeekDayInfo from "../WeatherList/components/WeatherCard/components/WeekDayInfo";
-import FaTimes from 'react-icons/lib/fa/times-circle'
+import TabNavigation from './components/TabNavigation'
 
 class MoreInfoModal extends React.Component {
-  state = {
-    activeChart: 'temp',
-  }
-
-  selectCity = (city) => () => {
+  handleSelectCity = (city) => () => {
     const { actions } = this.props
 
     actions.selectCity(city)
@@ -25,7 +21,6 @@ class MoreInfoModal extends React.Component {
 
   render() {
     const { weather } = this.props
-    const { activeChart } = this.state
     const item = get(weather, 'activeCity')
     const dayNames = [
       'Sunday',
@@ -57,21 +52,10 @@ class MoreInfoModal extends React.Component {
       return (
         <div className="modal-container">
           <div className="more-info-modal">
-            <div className="modal-tabs">
-              {weather.city.map((weatherCity) => {
-                return (
-                  <a
-                    onClick={this.selectCity(weatherCity)}
-                    className={weather.activeCity.city.id === weatherCity.city.id ? 'active' : ''}
-                  >
-                    <span className="city-name">
-                      {weatherCity.city.name}, {weatherCity.city.country}
-                    </span>
-                    <FaTimes/>
-                  </a>
-                )
-              })}
-            </div>
+            <TabNavigation
+              onSelect={this.handleSelectCity}
+              weather={weather}
+            />
             <div className={`modal-hero hero-bg-${item.list[0].weather[0].icon}`}/>
             <Row>
               <Col sm={6}>
@@ -86,7 +70,7 @@ class MoreInfoModal extends React.Component {
                     max={item ? item.list[0].main.temp_max : '-'}
                     wind={item ? item.list[0].wind.speed : '-'}
                   />
-                  <TempChart data={item.list} activeChart={activeChart}/>
+                  <TempChart data={item.list}/>
                   <div className="week">
                     {weekDayList.map((week, key) => {
                       return (
@@ -112,7 +96,7 @@ class MoreInfoModal extends React.Component {
                       {Math.round(item.list[0].wind.speed * 3.6)} kmh
                     </span>
                       </div>
-                      <WindChart data={item.list} activeChart={activeChart}/>
+                      <WindChart data={item.list}/>
                     </div>
                   </Col>
                   <Col sm={12}>
@@ -123,7 +107,7 @@ class MoreInfoModal extends React.Component {
                       {Math.round(item.list[0].main.humidity)} %
                     </span>
                       </div>
-                      <HumidityChart data={item.list} activeChart={activeChart}/>
+                      <HumidityChart data={item.list} />
                     </div>
                   </Col>
                 </Row>
