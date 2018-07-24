@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { connect } from 'react-redux'
-import SearchBar from './components/SearchBar'
+import Header from './components/Header'
 import WeatherCardList from './components/WeatherList'
 import WeatherStatsList from './components/MoreInfoModal'
 import DisplayModeSelector from './components/DisplayModeSelector'
@@ -49,17 +49,12 @@ class App extends React.Component {
         <Helmet>
           <title>Weather App</title>
         </Helmet>
-        <header className="App-header">
-          <div className="search-bar">
-            <SearchBar />
-          </div>
-        </header>
+        <Header/>
         {displayError && (
           <div className="error-container">
             <h4>404! city not found</h4>
           </div>
         )}
-        <DisplayModeSelector/>
         {this.renderWeatherList()}
       </div>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { InputGroup, Button, FormControl } from 'react-bootstrap'
+import { InputGroup, Button, FormControl, ControlLabel, Row, Col } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from '../../reducer'
@@ -32,9 +32,10 @@ class SearchBar extends Component {
     const { city } = this.state
 
     return (
-      <form onSubmit={this.handleSubmit}>
-          <div className="row form-container">
-            <div className="col-sm-12">
+      <div className="search-bar">
+        <form onSubmit={this.handleSubmit}>
+          <Row>
+            <Col sm={12}>
               <InputGroup>
                 <FormControl
                   type="text"
@@ -51,9 +52,10 @@ class SearchBar extends Component {
                   </Button>
                 </InputGroup.Button>
               </InputGroup>
-            </div>
-          </div>
-      </form>
+            </Col>
+          </Row>
+        </form>
+      </div>
     );
   }
 }

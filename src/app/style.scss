@@ -20,11 +20,39 @@ body {
  ********/
 
 .App-header {
+  text-align: left;
   color: $header-color;
   background: $header-bg;
   padding: $header-padding;
   box-shadow: $header-box-shadow;
   border-bottom: $header-border-bottom;
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    h4 {
+      color: $app-background !important;
+      text-shadow: $heading-text-shadow !important;
+      margin-bottom: 0;
+    }
+
+    img {
+      max-width: 80px;
+      filter: invert(100%);
+    }
+  }
+
+  .search-bar-container {
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+    .search-bar {
+      flex: 1;
+    }
+  }
 }
 
 .error-container {

@@ -113,7 +113,6 @@ class MoreInfoModal extends React.Component {
                 </Row>
               </Col>
               <Col sm={12}>
-                <div className={`modal-hero hero-bg-${item.list[0].weather[0].icon}`}/>
                 <div className="credits">
                   <a href="https://openweathermap.org/" rel="noopener noreferrer" target="_blank">
                     source: openweathermap.org
