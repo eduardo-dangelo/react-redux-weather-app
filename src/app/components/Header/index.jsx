@@ -8,13 +8,13 @@ class Header extends React.Component {
       <header className="App-header">
         <div className="container">
         <Row>
-          <Col sm={8}>
+          <Col md={8}>
             <div className="header-logo">
               <img src={require('../WeatherList/img/weather-icon.png')} alt="icon"/>
               <h4>The Weather App</h4>
             </div>
           </Col>
-          <Col sm={4}>
+          <Col md={4}>
             <div className="search-bar-container">
               <SearchBar />
             </div>
