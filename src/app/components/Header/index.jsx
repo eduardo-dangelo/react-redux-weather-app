@@ -7,19 +7,19 @@ class Header extends React.Component {
     return (
       <header className="App-header">
         <div className="container">
-        <Row>
-          <Col md={8}>
-            <div className="header-logo">
-              <img src={require('../WeatherList/img/weather-icon.png')} alt="icon"/>
-              <h4>The Weather App</h4>
-            </div>
-          </Col>
-          <Col md={4}>
-            <div className="search-bar-container">
-              <SearchBar />
-            </div>
-          </Col>
-        </Row>
+          <Row>
+            <Col md={8}>
+              <div className="header-logo">
+                <img src={require('../WeatherList/img/weather-icon.png')} alt="icon"/>
+                <h4>The Weather App</h4>
+              </div>
+            </Col>
+            <Col md={4}>
+              <div className="search-bar-container">
+                <SearchBar />
+              </div>
+            </Col>
+          </Row>
         </div>
         {/*<DisplayModeSelector/>*/}
       </header>

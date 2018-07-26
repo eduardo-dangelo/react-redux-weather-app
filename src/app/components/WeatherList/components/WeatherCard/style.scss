@@ -14,7 +14,7 @@
   opacity: 1;
   filter: grayscale(50%);
   animation: fadeIn 1s ease;
-  cursor: pointer;
+  cursor: default;
   transition: .6s ease;
   overflow: hidden;
 
@@ -46,6 +46,11 @@
     }
   }
 
+  @keyframes FadeIn {
+    0% { width: 0; }
+    100% { width: auto; }
+  }
+
   @media all and (max-width: 400px) {
     margin: 5px auto;
   }
@@ -54,6 +59,37 @@
     width: $card-width-380px;
     margin: $card-margin-380px;
     min-height: $card-height;
+  }
+
+  .dropdown-container {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+
+    button {
+      border-radius: 50%;
+      border: none;
+      box-shadow: $hover-box-shadow;
+      padding: 2px;
+      background: white !important;
+      color: #444444;
+
+      svg {
+        font-size: 1.4em;
+        margin: 0;
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:hover {
+        background: #cb0000;
+      }
+    }
   }
   
   /*************
