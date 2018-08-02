@@ -13,9 +13,10 @@
   position: relative;
   opacity: 1;
   filter: grayscale(50%);
-  animation: fadeIn 1s ease;
+  //animation: fadeIn 1s ease;
+  //animation: 2s ease;
+  //animation-duration: .6s;
   cursor: default;
-  transition: .6s ease;
   overflow: hidden;
 
   &:before {
@@ -23,14 +24,14 @@
     content: '';
     width: 720px;
     height: 160px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.2), rgba(255,255,255,0));
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.1), rgba(255,255,255,0));
     //border: 1px solid orange;
     //box-shadow: 0 0 28px white;
     position: absolute;
     transform: rotateZ(50deg);
     top: 145px;
     left: -185%;
-    opacity: 1;
+    opacity: .5;
   }
 
   &:hover {
@@ -85,9 +86,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 5px 10px;
 
       &:hover {
-        background: #cb0000;
+        background: rgba(0,0,0,0.2);
       }
     }
   }

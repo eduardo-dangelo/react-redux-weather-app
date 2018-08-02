@@ -29,6 +29,12 @@
 
   .intro-message {
     margin-top: $heading-margin-top;
+
+    .search-bar {
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+    }
     
     h1 {
       color: $app-background;

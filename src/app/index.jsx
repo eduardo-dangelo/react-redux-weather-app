@@ -44,12 +44,13 @@ class App extends React.Component {
 
   render() {
     const { displayError } = this.state
+    const { weather } = this.props
     return (
       <div className="App">
         <Helmet>
           <title>Weather App</title>
         </Helmet>
-        <Header/>
+        <Header weather={weather}/>
         {displayError && (
           <div className="error-container">
             <h4>404! city not found</h4>

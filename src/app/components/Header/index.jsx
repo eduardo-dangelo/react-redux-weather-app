@@ -4,6 +4,12 @@ import { Col, Row } from 'react-bootstrap'
 
 class Header extends React.Component {
   render() {
+    const { weather } = this.props
+
+    // if (weather.city.length === 0) {
+    //   return null
+    // }
+
     return (
       <header className="App-header">
         <div className="container">

@@ -23,6 +23,7 @@ export function reducer(state = initialValues, action) {
       return {
         ...state,
         activeCity: action.payload.data,
+        selectedCity: action.payload.data,
         lastRequest: action.payload.data,
         city: [ ...state.city, action.payload.data ],
       };

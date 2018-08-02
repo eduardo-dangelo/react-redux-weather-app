@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import WeatherCard from './components/WeatherCard'
+import SearchBar from '../SearchBar'
+
 import './style.scss'
 
 class WeatherList extends Component {
@@ -18,13 +20,18 @@ class WeatherList extends Component {
     const hasSelectedCity = weather.selectedCity.city
     console.log('hasSelectedCity', hasSelectedCity)
 
+    const divStyle = {
+      width: '300px',
+    };
+
     return (
-      <div className={`internal-page ${hasSelectedCity && 'disabled'}`}>
+      <div className={`internal-page `}>
         {noCitySearched ? (
-          <div className="intro-message">
-            <h1>The Weather App</h1>
-            <h1>Search for a city to receive weather information</h1>
+          <div className="intro-message animated bounceInUp">
             <img src={require('./img/weather-icon.png')} alt="icon"/>
+            <h1>The Weather App</h1>
+            {/*<SearchBar/>*/}
+            <h1>Search for a city to receive weather information</h1>
           </div>
         ) : (
           <div className="weather-list">

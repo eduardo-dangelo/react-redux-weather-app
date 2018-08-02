@@ -5,9 +5,10 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from '../../../../reducer'
 import './style.scss';
-import { ButtonToolbar, DropdownButton, MenuItem, Popover } from "react-bootstrap";
+import { map } from 'lodash'
+import { ButtonToolbar, DropdownButton, MenuItem } from "react-bootstrap";
 import FaEllipsis from 'react-icons/lib/fa/ellipsis-h'
-import FaSignal from "react-icons/lib/fa/signal";
+import FaChart from "react-icons/lib/fa/bar-chart";
 
 class WeatherList extends Component {
   state = {
@@ -69,8 +70,8 @@ class WeatherList extends Component {
     return (
       <div>
         <div
-          className="weather-card-container"
-          onMouseEnter={this.handleCardMouseHover}
+          className="weather-card-container animated fadeIn"
+          onMouseOver={this.handleCardMouseHover}
           onMouseLeave={this.handleCardMouseLeave}
         >
           {showDropdown && (
@@ -88,7 +89,7 @@ class WeatherList extends Component {
                     onClick={this.handleViewStats(cityData)}
                   >
                     View Stats
-                    <FaSignal/>
+                    <FaChart/>
                   </MenuItem>
                 </DropdownButton>
               </ButtonToolbar>
@@ -106,17 +107,17 @@ class WeatherList extends Component {
               wind={cityData ? cityData.list[0].wind.speed : '-'}
             />
             <div className="week">
-              {weekDayList.map((week, key) => {
-                return (
-                  <WeekDayInfo
-                    key={key}
-                    day={dayNames[dayIndex + week.index]}
-                    icon={cityData ? cityData.list[week.dayNumber].weather[0].icon : '-'}
-                    desc={cityData ? cityData.list[week.dayNumber].weather[0].description : '-'}
-                    tempMax={cityData ? cityData.list[week.dayNumber].main.temp_max : '-'}
-                  />
-                )
-              })}
+              {/*{map(weekDayList, (week, key) => {*/}
+                {/*return (*/}
+                  {/*<WeekDayInfo*/}
+                    {/*key={key}*/}
+                    {/*day={dayNames[dayIndex + week.index]}*/}
+                    {/*icon={cityData ? cityData.list[week.dayNumber].weather[0].icon : '-'}*/}
+                    {/*desc={cityData ? cityData.list[week.dayNumber].weather[0].description : '-'}*/}
+                    {/*tempMax={cityData ? cityData.list[week.dayNumber].main.temp_max : '-'}*/}
+                  {/*/>*/}
+                {/*)*/}
+              {/*})}*/}
             </div>
           </div>
         </div>

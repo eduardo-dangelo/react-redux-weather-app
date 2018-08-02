@@ -65,7 +65,7 @@ class WindChart extends Component {
       <div>
         <Line
           width={100}
-          height={100}
+          height={80}
           options={options}
           data={chartData}/>
       </div>
