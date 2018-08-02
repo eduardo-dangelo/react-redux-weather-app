@@ -18,11 +18,6 @@ class WeatherList extends Component {
     const { weather } = this.props
     const noCitySearched = weather.city.length === 0
     const hasSelectedCity = weather.selectedCity.city
-    console.log('hasSelectedCity', hasSelectedCity)
-
-    const divStyle = {
-      width: '300px',
-    };
 
     return (
       <div className={`internal-page `}>

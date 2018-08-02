@@ -48,7 +48,7 @@ export function reducer(state = initialValues, action) {
     case HANDLE_ERROR:
       return {
         ...state,
-        hasError: true,
+        hasError: action.payload,
       };
     default:
       return state;
@@ -88,6 +88,13 @@ const fetchWeather = (city, country) => {
             dispatch({type: FETCH_WEATHER, payload: response })
           }
         }
+      })
+      .catch(() => {
+        dispatch({type: HANDLE_ERROR, payload: true })
+
+        setTimeout(() => {
+          dispatch({type: HANDLE_ERROR, payload: false })
+        }, 4000)
       })
   }
 }

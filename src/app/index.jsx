@@ -4,32 +4,12 @@ import { connect } from 'react-redux'
 import Header from './components/Header'
 import WeatherCardList from './components/WeatherList'
 import WeatherStatsList from './components/MoreInfoModal'
-import DisplayModeSelector from './components/DisplayModeSelector'
+
 import './style.scss'
 import { bindActionCreators } from 'redux'
 import { actions } from './reducer'
 
 class App extends React.Component {
-  state = {
-    displayError: false,
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const { weather } = this.props
-
-    if (weather.lastRequest !== nextProps.weather.lastRequest && !nextProps.weather.lastRequest) {
-      this.setState({
-        displayError: true,
-      })
-
-      setTimeout(() => {
-        this.setState({
-          displayError: false,
-        })
-      }, 3000)
-    }
-  }
-
   renderWeatherList = () => {
     const { weather } = this.props
 
@@ -43,7 +23,6 @@ class App extends React.Component {
   }
 
   render() {
-    const { displayError } = this.state
     const { weather } = this.props
     return (
       <div className="App">
@@ -51,9 +30,9 @@ class App extends React.Component {
           <title>Weather App</title>
         </Helmet>
         <Header weather={weather}/>
-        {displayError && (
-          <div className="error-container">
-            <h4>404! city not found</h4>
+        {weather.hasError && (
+          <div className="error-container animated fadeIn">
+            <h4>Ops! City could not be found.</h4>
           </div>
         )}
         {this.renderWeatherList()}
