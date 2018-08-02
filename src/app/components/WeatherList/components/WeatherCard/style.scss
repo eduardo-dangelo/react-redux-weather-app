@@ -88,9 +88,14 @@
       align-items: center;
       justify-content: space-between;
       padding: 5px 10px;
+      transition: .3s ease;
 
       &:hover {
         background: rgba(0,0,0,0.2);
+
+        svg {
+          color: #522e08;
+        }
       }
     }
   }

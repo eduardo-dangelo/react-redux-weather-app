@@ -11,6 +11,7 @@ import './style.scss'
 import MainInfo from "../WeatherList/components/WeatherCard/components/MainInfo";
 import WeekDayInfo from "../WeatherList/components/WeatherCard/components/WeekDayInfo";
 import TabNavigation from './components/TabNavigation'
+// import Map from './components/Map'
 
 
 class MoreInfoModal extends React.Component {
@@ -109,34 +110,37 @@ class MoreInfoModal extends React.Component {
                   {/*</div>*/}
                 {/*</div>*/}
               {/*</Col>*/}
-              {/*<Col sm={12}>*/}
-                {/*<Row>*/}
-                  {/*<Col sm={12}>*/}
-                    {/*<div className="chart-container">*/}
-                      {/*<div className="chart-header">*/}
-                        {/*<h5><img src={require('./img/wind.svg')} alt="wind" /> Wind</h5>*/}
-                        {/*<span>*/}
-                      {/*{Math.round(item.list[0].wind.speed * 3.6)} kmh*/}
-                    {/*</span>*/}
-                      {/*</div>*/}
-                      {/*<WindChart data={item.list}/>*/}
-                    {/*</div>*/}
-                  {/*</Col>*/}
-                  {/*<Col sm={12}>*/}
-                    {/*<div className="chart-container">*/}
-                      {/*<div className="chart-header">*/}
-                        {/*<h5>Humidity</h5>*/}
-                        {/*<span>*/}
-                      {/*{Math.round(item.list[0].main.humidity)} %*/}
-                    {/*</span>*/}
-                      {/*</div>*/}
-                      {/*<HumidityChart data={item.list} />*/}
-                    {/*</div>*/}
-                  {/*</Col>*/}
-                {/*</Row>*/}
-              {/*</Col>*/}
+              <Col sm={12}>
+                <Row>
+                  <Col sm={4}>
+                    <div className="chart-container">
+                      <div className="chart-header">
+                        <h5><img src={require('./img/wind.svg')} alt="wind" /> Wind</h5>
+                        <span>
+                      {Math.round(item.list[0].wind.speed * 3.6)} kmh
+                    </span>
+                      </div>
+                      <WindChart data={item.list}/>
+                    </div>
+                  </Col>
+                  <Col sm={4}>
+                    <div className="chart-container">
+                      <div className="chart-header">
+                        <h5>Humidity</h5>
+                        <span>
+                      {Math.round(item.list[0].main.humidity)} %
+                    </span>
+                      </div>
+                      <HumidityChart data={item.list} />
+                    </div>
+                  </Col>
+                </Row>
+              </Col>
               <Col sm={12}>
                 <TempChart data={item.list}/>
+              </Col>
+              <Col sm={12}>
+                {/*<Map/>*/}
               </Col>
               <Col sm={12}>
                 <div className="credits">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Line } from 'react-chartjs-2'
+import { Line, Doughnut  } from 'react-chartjs-2'
 import { fill } from "lodash"
 
 class HumidityChart extends Component {
@@ -27,7 +27,7 @@ class HumidityChart extends Component {
       datasets: [
         {
           label: 'Humidity',
-          backgroundColor: 'rgba(139, 139, 242, 0.05)',
+          backgroundColor: ['rgba(139, 139, 242,0.2)', 'rgba(39, 39, 142, 0.05)'],
           borderColor: 'rgba(139, 139, 242, 1)',
           borderWidth: 3,
           hoverBackgroundColor: 'rgba(139, 139, 242,0.4)',
@@ -39,7 +39,7 @@ class HumidityChart extends Component {
           pointHitRadius: 10,
           pointBorderWidth: 1,
           pointHoverRadius: 5,
-          data: humidity
+          data: [ humidity[0], (100 - humidity[0]) ]
         }
       ]
     };
@@ -61,9 +61,9 @@ class HumidityChart extends Component {
 
     return (
       <div>
-        <Line
-          width={100}
-          height={80}
+        <Doughnut
+          // width={100}
+          height={180}
           options={options}
           data={chartData}
         />
