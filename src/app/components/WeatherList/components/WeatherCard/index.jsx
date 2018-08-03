@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from '../../../../reducer'
 import './style.scss';
-import { map } from 'lodash'
+import { map, get } from 'lodash'
 import { ButtonToolbar, DropdownButton, MenuItem } from "react-bootstrap";
 import FaEllipsis from 'react-icons/lib/fa/ellipsis-h'
 import FaChart from "react-icons/lib/fa/bar-chart";
@@ -100,24 +100,24 @@ class WeatherList extends Component {
               name={name}
               country={country}
               day={day}
-              temp={cityData ? cityData.list[0].main.temp : '-'}
-              desc={cityData ? cityData.list[0].weather[0].description : '-'}
-              min={cityData ? cityData.list[0].main.temp_min : '-'}
-              max={cityData ? cityData.list[0].main.temp_max : '-'}
-              wind={cityData ? cityData.list[0].wind.speed : '-'}
+              temp={get(cityData, `list[0].main.temp`, '-')}
+              desc={get(cityData, `list[0].weather[0].description`, '-')}
+              min={get(cityData, `list[0].main.temp_min`, '-')}
+              max={get(cityData, `list[0].main.temp_max`, '-')}
+              wind={get(cityData, `list[0].wind.speed`, '-')}
             />
             <div className="week">
-              {/*{map(weekDayList, (week, key) => {*/}
-                {/*return (*/}
-                  {/*<WeekDayInfo*/}
-                    {/*key={key}*/}
-                    {/*day={dayNames[dayIndex + week.index]}*/}
-                    {/*icon={cityData ? cityData.list[week.dayNumber].weather[0].icon : '-'}*/}
-                    {/*desc={cityData ? cityData.list[week.dayNumber].weather[0].description : '-'}*/}
-                    {/*tempMax={cityData ? cityData.list[week.dayNumber].main.temp_max : '-'}*/}
-                  {/*/>*/}
-                {/*)*/}
-              {/*})}*/}
+              {map(weekDayList, (week, key) => {
+                return (
+                  <WeekDayInfo
+                    key={key}
+                    day={dayNames[dayIndex + week.index]}
+                    icon={get(cityData, `list[${week.dayNumber}].weather[0].icon`, '-')}
+                    desc={get(cityData, `list[${week.dayNumber}].weather[0].description`, '-')}
+                    tempMax={get(cityData, `list[${week.dayNumber}].main.temp_max`, '-')}
+                  />
+                )
+              })}
             </div>
           </div>
         </div>
