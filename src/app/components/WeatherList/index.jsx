@@ -22,11 +22,11 @@ class WeatherList extends Component {
     return (
       <div className={`internal-page `}>
         {noCitySearched ? (
-          <div className="intro-message animated bounceInUp">
+          <div className="intro-message animated fadeIn">
             <img src={require('./img/weather-icon.png')} alt="icon"/>
-            <h1>The Weather App</h1>
+            {/*<h1>The Weather App</h1>*/}
             {/*<SearchBar/>*/}
-            <h1>Search for a city to receive weather information</h1>
+            <h1>Search for any city and receive weather information</h1>
           </div>
         ) : (
           <div className="weather-list">

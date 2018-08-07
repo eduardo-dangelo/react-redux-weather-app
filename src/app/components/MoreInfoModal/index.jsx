@@ -11,7 +11,7 @@ import './style.scss'
 import MainInfo from "../WeatherList/components/WeatherCard/components/MainInfo";
 import WeekDayInfo from "../WeatherList/components/WeatherCard/components/WeekDayInfo";
 import TabNavigation from './components/TabNavigation'
-// import Map from './components/Map'
+import Map from './components/Map'
 
 
 class MoreInfoModal extends React.Component {
@@ -83,36 +83,37 @@ class MoreInfoModal extends React.Component {
             />
             <div className={`modal-hero hero-bg-${item.list[0].weather[0].icon}`}/>
             <Row>
-              {/*<Col sm={6}>*/}
-                {/*<div className="chart-container">*/}
+              <Col sm={9}>
+                <div className="chart-container">
                   {/*<MainInfo*/}
                     {/*name={item.city.name}*/}
                     {/*country={item.city.country}*/}
                     {/*day={day}*/}
-                    {/*temp={item ? item.list[0].main.temp : '-'}*/}
-                    {/*desc={item ? item.list[0].weather[0].description : '-'}*/}
-                    {/*min={item ? item.list[0].main.temp_min : '-'}*/}
-                    {/*max={item ? item.list[0].main.temp_max : '-'}*/}
-                    {/*wind={item ? item.list[0].wind.speed : '-'}*/}
+                    {/*temp={get(item, 'list[0].main.temp')}*/}
+                    {/*desc={get(item, 'list[0].weather[0].description')}*/}
+                    {/*min={get(item, 'list[0].main.temp_min')}*/}
+                    {/*max={get(item, 'list[0].main.temp_max')}*/}
+                    {/*wind={get(item, 'list[0].wind.speed')}*/}
                   {/*/>*/}
-                  {/*<div className="week">*/}
-                    {/*{map(weekDayList, (week, key) => {*/}
-                      {/*return (*/}
-                        {/*<WeekDayInfo*/}
-                          {/*key={key}*/}
-                          {/*day={dayNames[dayIndex + week.index]}*/}
-                          {/*icon={item ? item.list[week.dayNumber].weather[0].icon : '-'}*/}
-                          {/*desc={item ? item.list[week.dayNumber].weather[0].description : '-'}*/}
-                          {/*tempMax={item ? item.list[week.dayNumber].main.temp_max : '-'}*/}
-                        {/*/>*/}
-                      {/*)*/}
-                    {/*})}*/}
-                  {/*</div>*/}
-                {/*</div>*/}
-              {/*</Col>*/}
-              <Col sm={12}>
+                  <TempChart data={item.list}/>
+                  <div className="week-stats">
+                    {map(weekDayList, (week, key) => {
+                      return (
+                        <WeekDayInfo
+                          key={key}
+                          day={dayNames[dayIndex + week.index]}
+                          icon={get(item, `list[${week.dayNumber}].weather[0].icon`)}
+                          desc={get(item, `list[${week.dayNumber}].weather[0].description`)}
+                          tempMax={get(item, `list[${week.dayNumber}].main.temp_max`)}
+                        />
+                      )
+                    })}
+                  </div>
+                </div>
+              </Col>
+              <Col sm={3}>
                 <Row>
-                  <Col sm={4}>
+                  <Col sm={12}>
                     <div className="chart-container">
                       <div className="chart-header">
                         <h5><img src={require('./img/wind.svg')} alt="wind" /> Wind</h5>
@@ -123,7 +124,7 @@ class MoreInfoModal extends React.Component {
                       <WindChart data={item.list}/>
                     </div>
                   </Col>
-                  <Col sm={4}>
+                  <Col sm={12}>
                     <div className="chart-container">
                       <div className="chart-header">
                         <h5>Humidity</h5>
@@ -136,12 +137,12 @@ class MoreInfoModal extends React.Component {
                   </Col>
                 </Row>
               </Col>
-              <Col sm={12}>
-                <TempChart data={item.list}/>
-              </Col>
-              <Col sm={12}>
-                {/*<Map/>*/}
-              </Col>
+              {/*<Col sm={12}>*/}
+                {/*<TempChart data={item.list}/>*/}
+              {/*</Col>*/}
+              {/*<Col sm={12}>*/}
+                {/*<Map data={item}/>*/}
+              {/*</Col>*/}
               <Col sm={12}>
                 <div className="credits">
                   <a href="https://openweathermap.org/" rel="noopener noreferrer" target="_blank">

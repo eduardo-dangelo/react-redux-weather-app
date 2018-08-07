@@ -1,43 +1,73 @@
-import React from 'react'
 
+import React, { Component } from "react"
 import {
   ComposableMap,
   ZoomableGroup,
   Geographies,
   Geography,
+  Graticule,
 } from "react-simple-maps"
+import { geoAzimuthalEqualArea } from "d3-geo"
 
-class Map extends React.Component {
+const wrapperStyles = {
+  width: "100%",
+  maxWidth: 980,
+  margin: "0 auto",
+  background: "white"
+}
+
+class CustomProjectionMap extends Component {
+  projection(width, height, config) {
+    return geoAzimuthalEqualArea()
+      .rotate([-10,-52,0])
+      .scale(config.scale)
+  }
   render() {
-    return(
-      <div>
-        <ComposableMap>
-          <ZoomableGroup>
-            <Geographies geography={ "/path/to/your/topojson-map-file.json or geography object" }>
-              {(geographies, projection) => geographies.map(geography => (
+    return (
+      <div style={wrapperStyles}>
+        <ComposableMap
+          projection={this.projection}
+          projectionConfig={{
+            scale: 600,
+          }}
+          width={980}
+          height={551}
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
+        >
+          <ZoomableGroup center={[10,52]}>
+            <Geographies geography="/static/world-50m.json">
+              {(geographies, projection) => geographies.map((geography, i) => (
                 <Geography
-                  key={ geography.id }
-                  geography={ geography }
-                  projection={ projection }
+                  key={i}
+                  geography={geography}
+                  projection={projection}
+                  style={{
+                    default: {
+                      fill: "#ECEFF1",
+                      stroke: "#607D8B",
+                      strokeWidth: 0.75,
+                      outline: "none",
+                    },
+                    hover: {
+                      fill: "#607D8B",
+                      stroke: "#607D8B",
+                      strokeWidth: 0.75,
+                      outline: "none",
+                    },
+                    pressed: {
+                      fill: "#FF5722",
+                      stroke: "#607D8B",
+                      strokeWidth: 0.75,
+                      outline: "none",
+                    },
+                  }}
                 />
               ))}
             </Geographies>
-          </ZoomableGroup>
-        </ComposableMap>
-        <ComposableMap>
-          <ZoomableGroup>
-            <Geographies geography={ "/path/to/your/topojson-map-file.json or geography object" }>
-              {(geographies, projection) => geographies.map(geography => (
-                <Geography key={ geography.id } geography={ geography } projection={ projection } />
-              ))}
-            </Geographies>
-            <Markers>
-              <Marker />
-            </Markers>
-            <Lines>
-              <Line />
-            </Lines>
-            <Annotation />
+            <Graticule />
           </ZoomableGroup>
         </ComposableMap>
       </div>
@@ -45,4 +75,4 @@ class Map extends React.Component {
   }
 }
 
-export default Map
+export default CustomProjectionMap

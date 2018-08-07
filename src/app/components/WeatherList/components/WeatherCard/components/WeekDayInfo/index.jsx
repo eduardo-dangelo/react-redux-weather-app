@@ -11,7 +11,9 @@ export default class WeekDayInfo extends Component {
           {day}
         </div>
         <div className="day-description">
-          <img src={`http://openweathermap.org/img/w/${icon}.png`} alt='Icon depicting current weather.' />
+          <div className="icon-container">
+            <img src={`http://openweathermap.org/img/w/${icon}.png`} alt='Icon depicting current weather.' />
+          </div>
           <span>{desc}</span>
         </div>
         <div className="day-temp">
