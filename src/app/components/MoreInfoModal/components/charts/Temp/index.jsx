@@ -19,7 +19,7 @@ class TempChart extends Component {
     })
 
     const filter1 = fill(label, '', 0, 40)
-    const filter2 = fill(filter1, 'Now', 0, 1)
+    const filter2 = fill(filter1, '', 0, 1)
     const filter3 = fill(filter2, '24h', 8, 9)
     const filter4 = fill(filter3, '48h', 16, 17)
     const filter5 = fill(filter4, '72h', 24, 25)

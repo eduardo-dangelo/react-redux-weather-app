@@ -81,20 +81,22 @@ class MoreInfoModal extends React.Component {
               showDropdown={showDropdown}
               actions={actions}
             />
-            <div className={`modal-hero hero-bg-${item.list[0].weather[0].icon}`}/>
+            <div className={`modal-hero hero-bg-${item.list[0].weather[0].icon}`}>
+              <MainInfo
+                type="horizontal"
+                name={item.city.name}
+                country={item.city.country}
+                day={day}
+                temp={get(item, 'list[0].main.temp')}
+                desc={get(item, 'list[0].weather[0].description')}
+                min={get(item, 'list[0].main.temp_min')}
+                max={get(item, 'list[0].main.temp_max')}
+                wind={get(item, 'list[0].wind.speed')}
+              />
+            </div>
             <Row>
               <Col sm={9}>
                 <div className="chart-container">
-                  {/*<MainInfo*/}
-                    {/*name={item.city.name}*/}
-                    {/*country={item.city.country}*/}
-                    {/*day={day}*/}
-                    {/*temp={get(item, 'list[0].main.temp')}*/}
-                    {/*desc={get(item, 'list[0].weather[0].description')}*/}
-                    {/*min={get(item, 'list[0].main.temp_min')}*/}
-                    {/*max={get(item, 'list[0].main.temp_max')}*/}
-                    {/*wind={get(item, 'list[0].wind.speed')}*/}
-                  {/*/>*/}
                   <TempChart data={item.list}/>
                   <div className="week-stats">
                     {map(weekDayList, (week, key) => {
@@ -113,26 +115,28 @@ class MoreInfoModal extends React.Component {
               </Col>
               <Col sm={3}>
                 <Row>
+                  {/*<Col sm={12}>*/}
+                    {/*<div className="chart-container">*/}
+                      {/*<div className="chart-header">*/}
+                        {/*<h5><img src={require('./img/wind.svg')} alt="wind" /> Wind</h5>*/}
+                        {/*<span>*/}
+                          {/*{Math.round(item.list[0].wind.speed * 3.6)} kmh*/}
+                        {/*</span>*/}
+                      {/*</div>*/}
+                      {/*<WindChart data={item.list}/>*/}
+                    {/*</div>*/}
+                  {/*</Col>*/}
                   <Col sm={12}>
                     <div className="chart-container">
-                      <div className="chart-header">
-                        <h5><img src={require('./img/wind.svg')} alt="wind" /> Wind</h5>
-                        <span>
-                      {Math.round(item.list[0].wind.speed * 3.6)} kmh
-                    </span>
+                      <div className="chart-wrapper">
+                        <HumidityChart data={item.list} />
+                        <div className="chart-header">
+                          <h5>Humidity</h5>
+                          <span>
+                            {Math.round(item.list[0].main.humidity)} %
+                          </span>
+                        </div>
                       </div>
-                      <WindChart data={item.list}/>
-                    </div>
-                  </Col>
-                  <Col sm={12}>
-                    <div className="chart-container">
-                      <div className="chart-header">
-                        <h5>Humidity</h5>
-                        <span>
-                      {Math.round(item.list[0].main.humidity)} %
-                    </span>
-                      </div>
-                      <HumidityChart data={item.list} />
                     </div>
                   </Col>
                 </Row>
