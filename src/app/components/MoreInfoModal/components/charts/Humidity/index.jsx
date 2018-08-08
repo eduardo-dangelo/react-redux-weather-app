@@ -52,7 +52,9 @@ class HumidityChart extends Component {
       tooltips: {
         callbacks: {
           label: function(tooltipItem) {
-            return (tooltipItem.yLabel);
+            return (
+              <h2>{tooltipItem.yLabel}</h2>
+            );
           }
         }
       },

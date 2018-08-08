@@ -55,9 +55,12 @@ class TempChart extends Component {
           display: false
         },
         tooltips: {
+          enabled: true,
+          mode: 'index',
+          position: 'nearest',
           callbacks: {
             label: function(tooltipItem) {
-              return (tooltipItem.yLabel);
+                return (`  ${tooltipItem.yLabel} °`);
             }
           }
         },
