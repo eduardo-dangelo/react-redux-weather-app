@@ -32,7 +32,7 @@ class App extends React.Component {
         <Header weather={weather}/>
         {weather.hasError && (
           <div className="error-container">
-            <h4>Ops! This city could not be found. :(</h4>
+            <h4>Ops! This city could not be found. Please try again.</h4>
           </div>
         )}
         {this.renderWeatherList()}
