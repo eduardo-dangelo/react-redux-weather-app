@@ -31,8 +31,8 @@ class App extends React.Component {
         </Helmet>
         <Header weather={weather}/>
         {weather.hasError && (
-          <div className="error-container animated fadeIn">
-            <h4>Ops! City could not be found.</h4>
+          <div className="error-container">
+            <h4>Ops! This city could not be found. :(</h4>
           </div>
         )}
         {this.renderWeatherList()}
