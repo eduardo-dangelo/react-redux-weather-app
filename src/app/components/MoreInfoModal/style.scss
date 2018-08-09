@@ -261,6 +261,7 @@
     box-shadow: $inset-box-shadow;
     height: 99px;
 
+
     .main-info {
       //display: flex;
       //align-items: center;
@@ -269,6 +270,10 @@
       color: $card-color;
       //justify-content: space-around;
       position: relative;
+
+      div {
+        text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      }
 
       .main-info-title {
         float: left;
@@ -350,6 +355,13 @@
     &.hero-bg-03d {
       background: url('./img/03d.jpg') !important;
       color: $card-inverse-color !important;
+
+      .main-info{
+
+        div {
+          color: $card-inverse-color !important;
+        }
+      }
     }
 
     &.hero-bg-03n {
@@ -363,6 +375,13 @@
     &.hero-bg-04d {
       color: $card-inverse-color !important;
       background: url('./img/04d.jpg') !important;
+
+      .main-info{
+
+        div {
+          color: $card-inverse-color !important;
+        }
+      }
     }
 
     &.hero-bg-04n {
@@ -388,6 +407,13 @@
     &.hero-bg-10d {
       color: $card-inverse-color !important;
       background: url('./img/10d.jpg') !important;
+
+      .main-info{
+
+        div {
+          color: $card-inverse-color !important;
+        }
+      }
     }
 
     &.hero-bg-10n {
@@ -437,9 +463,10 @@
 
     .chart-wrapper {
       padding-right: 15px;
-      margin-top: 15px;
+      margin-top: 60px;
 
       .chart-header {
+        color: #626262;
 
         span {
           margin-right: 15px;

@@ -27,11 +27,11 @@ class HumidityChart extends Component {
       datasets: [
         {
           label: 'Humidity',
-          backgroundColor: ['rgba(139, 139, 242,0.2)', 'rgba(39, 39, 142, 0.05)'],
-          borderColor: 'rgba(139, 139, 242, 1)',
-          borderWidth: 3,
-          hoverBackgroundColor: 'rgba(139, 139, 242,0.4)',
-          hoverBorderColor: 'rgba(139, 139, 242,1)',
+          backgroundColor: ['rgba(139, 139, 242,0.2)', 'rgba(39, 39, 142, 0.1)'],
+          borderColor: ['rgba(139, 139, 242, 1)', 'rgba(39, 39, 142, 0.1)'],
+          borderWidth: [3,3],
+          hoverBackgroundColor: ['rgba(139, 139, 242,0.4)', 'rgba(39, 39, 142, 0.1)'],
+          hoverBorderColor: ['rgba(139, 139, 242,1)', 'rgba(39, 39, 142, 0.1)'],
           pointHoverBackgroundColor: 'rgba(139, 139, 242,1)',
           pointHoverBorderColor: 'rgba(220,220,220,1)',
           pointHoverBorderWidth: 2,
@@ -50,6 +50,7 @@ class HumidityChart extends Component {
         display: false
       },
       tooltips: {
+        enabled: false,
         callbacks: {
           label: function(tooltipItem) {
             return (
