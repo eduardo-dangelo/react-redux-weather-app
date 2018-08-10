@@ -5,7 +5,7 @@
  ************************/
 
 .weather-card-container {
-  margin: 15px auto;
+  margin: 15px;
   width: $card-width;
   height: $card-height;
   box-shadow: $box-shadow;
@@ -13,9 +13,6 @@
   position: relative;
   opacity: 1;
   filter: grayscale(50%);
-  //animation: fadeIn 1s ease;
-  //animation: 2s ease;
-  //animation-duration: .6s;
   transition: .3s ease;
   cursor: default;
   overflow: hidden;
@@ -26,8 +23,6 @@
     width: 720px;
     height: 160px;
     background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.1), rgba(255,255,255,0));
-    //border: 1px solid orange;
-    //box-shadow: 0 0 28px white;
     position: absolute;
     transform: rotateZ(50deg);
     top: 145px;
@@ -39,12 +34,10 @@
     box-shadow: $hover-box-shadow;
     opacity: 1;
     filter: grayscale(0%);
-    //transform: translate(0px, 2px);
 
     &:before {;
       left: 75%;
       transition: .5s ease;
-      //transition: .4s ease;
     }
   }
 
@@ -62,6 +55,10 @@
     margin: $card-margin-380px;
     min-height: $card-height;
   }
+
+  /*******************
+   DROPDOWN-CONTAINER
+  ********************/
 
   .dropdown-container {
     position: absolute;
